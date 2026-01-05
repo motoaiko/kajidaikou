@@ -1,0 +1,1400 @@
+@use 'global/variables' as *;
+
+/* ----------------- */
+/* 共通設定*/
+/* ----------------- */
+body {
+  overflow-x: hidden;
+  font-size:16px;
+  font-family: $font-main;
+  color: var(--color-text-main);
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-base);
+  background-repeat: no-repeat;
+  text-align: center;
+  
+  @include mobile {
+    font-size: 14px;
+    text-align: justify;
+}
+}
+
+.mobile {
+  display: none;
+  
+  @include mobile {
+    display: block;
+  }
+}
+
+.pc {
+  display: block;
+  
+  @include mobile {
+    display: none;
+  }
+}
+
+a {
+  color: var(--color-link);
+  transition: all 0.5s ease;  
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    
+    @include mobile {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+.heading{
+  font-size: 32px;
+  font-family: $font-accent; 
+  font-weight: 700; 
+  line-height: 1.4;
+  position: relative;
+
+  @include mobile {
+    font-size: 18px;
+    text-align: center;
+    
+  }
+}
+/* -----------------------------------------*/
+/* common */
+/* -----------------------------------------*/
+.common{
+  &__title--em{
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+
+    @include mobile {
+      font-size: 24px;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 240px;
+      height: 18px;
+      background-image: url(../img/line-removebg-preview.png);
+      position: absolute;
+    }
+  }
+  &__label{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 12px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  &__subtitle--em{
+    color: var(--color-secondary);
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: $font-en;
+  }
+
+  /* 英字サブタイトル */
+  &__title--en {
+    display: block;
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+    opacity: 0.8;
+  
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+  
+}
+/* ---------------------------------------- */
+/* フェードアップjs */
+/* ---------------------------------------- */
+.js-fadeup {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1s ease, transform 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+}
+
+/* ---------------------------------------- */
+/* header */
+/* ---------------------------------------- */
+.header {
+  width: 100%;
+  height: 100px;
+  box-shadow: var(--shadow);
+  position: fixed;
+  z-index: 100;
+  background: var(--color-bg-base);
+  transition: background 0.3s ease;
+
+  &.is-scrolled { 
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(4px); 
+    height: 80px;
+  }
+
+  @include mobile {
+    height: 80px;
+    overflow: hidden;
+  }
+
+  &__inner {
+    position: relative;
+    height: inherit;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 150px;
+    
+    @include mobile {
+      width: 120px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+
+    @include tablet {
+      width: 50%;
+      height: 100vh;
+      background-color: var(--color-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      right: 0;
+      top: 0;
+      transform: translateX(100vw);
+      transition: transform 0.5s ease;
+      z-index: 9999;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+
+    @include tablet {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      gap: 0;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    font-weight: bold;
+    padding-bottom: 5px;
+    position: relative;
+
+    &::before{
+      background: var(--color-primary);
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform-origin: right top;
+      transform: scale(0, 1);
+      transition: transform .3s;
+    }
+
+    &:hover::before{
+      transform-origin: center top;
+      transform: scale(1, 1);
+    }
+
+    @include tablet {
+      margin: 16px;
+    }
+
+    a {
+      color: var(--color-text-main);
+      transition: all 0.3s ease;
+      
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
+      @include tablet {
+        color: #fff;
+        font-size:16px;
+        text-align: center;
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+  }
+
+  &__item--cta {
+    background: linear-gradient(
+      90deg,
+      rgb(230, 92, 0) 0%,
+      var(--color-primary) 100%
+    );
+    color: #fff !important;
+    padding: 8px 48px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover::before{
+      display: none;
+    }
+
+
+
+    @include tablet {
+      display: block;
+      text-align: center;
+      font-size:16px;
+
+    }
+  }
+  &__cta{
+    color: #fff !important;
+    font-size: 16px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__sns-icon {
+    display: flex;
+
+    @include tablet {
+      padding: 16px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--color-text-main);
+      transition: 0.2s;
+
+      @include tablet {
+        fill: #fff;
+      }
+    }
+
+    &:hover svg {
+      fill: var(--color-accent);
+
+      @include tablet {
+        fill: #fff;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+/* -----------------------------------------*/
+/* ハンバーガーメニュー */
+/* -----------------------------------------*/
+.hamburger {
+  display: none;
+  
+  @include tablet {
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 40%;
+    background-color: var(--color-btn);
+    z-index: 10000;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    .bar {
+      position: absolute;
+      transition: 0.5s;
+      margin: 13px 30%;
+      width: 40%;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 5px;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 15px;
+      }
+    }
+
+    .menu-text {
+      display: block;
+      color: #fff;
+      text-align: center;
+      margin-top: 28px;
+      font-weight: bold;
+      font-size: 12px;
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+/* -----------------------------------------*/
+/* メニューが開いた時の状態 */
+/* -----------------------------------------*/
+body.open {
+  @include tablet {
+    overflow: hidden;
+
+    .hamburger {
+      background-color: #fff;
+
+      .bar {
+        background-color: var(--color-btn);
+
+        &:nth-child(1) {
+          transform: rotate(45deg);
+          top: 10px;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+          top: 10px;
+        }
+      }
+
+      .menu-text {
+        color: var(--color-btn);
+      }
+    }
+
+    .header__nav {
+      transform: translateX(0);
+    }
+
+
+
+    .btn__page-top {
+      display: none;
+    }
+  }
+  
+}
+
+/* -----------------------------------------*/
+/* ファーストビュー */
+/* -----------------------------------------*/
+.fv {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+
+  @include mobile {
+    height: auto;
+    padding-bottom: 32px;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  
+
+
+    &--left {
+      left: 0;
+      background-image: url("../img/fv1.webp");
+      width: 60%;
+
+      @include mobile {
+        width: 100%;
+      }    
+    }
+
+    &--right {
+      right: 0;
+      background-image: url("../img/fv2.webp");
+      width: 40%;
+    
+    @include mobile {
+      display: none;
+    }
+   }
+  }
+  &__content {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.3) no-repeat center / contain;
+    padding: 48px 40px;
+    text-align: center;
+    border-radius: 150px;
+
+    @include mobile {
+      padding: 48px 24px;
+      border-radius: 50px;
+    }
+  }
+
+  &__title {
+    font-size:36px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.4;
+    margin-bottom:40px;
+
+    @include mobile {
+      font-size:24px;
+    }
+  }
+
+
+  &__title--em {
+    color: var(--color-accent);
+    display: inline-block;
+    font-size: 54px;
+    text-decoration: underline wavy var(--color-primary);
+    text-decoration-thickness: 4px;
+    text-underline-offset:16px; 
+
+    @include mobile {
+      font-size:32px;
+      text-underline-offset: 8px;
+    }
+  }
+  
+  
+
+  &__subtitle {
+    font-size: var(--fs-md);
+    color: var(--color-text-sub);
+    margin-bottom:32px;
+
+    @include mobile {
+      font-size: 16px;
+      text-align: center;
+      margin-top: 24px;
+    }
+  }
+
+
+  &__cta {
+    margin: 0 auto;
+    padding: 6px 32px;
+    font-weight: 700;
+    font-size: 20px;
+
+    @include mobile {
+      padding: 8px 24px;
+      font-size: 14px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      opacity: 1;
+      
+      @include mobile {
+        transform: none;
+      }
+    }
+
+  }
+
+  &__cta-area{
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+
+    @include mobile {
+      width: auto;
+    }
+  }
+}
+
+/* -----------------------------------------*/
+/* problem */
+/* -----------------------------------------*/
+.problem {
+  background: var(--color-bg-section);
+  padding: 160px 0;  
+  text-align: center;
+  position: relative;
+
+  @include mobile {
+    padding: 80px 16px;
+  }
+}
+.problem__title {
+  margin-bottom: 120px;
+
+  @include mobile {
+  margin-bottom: 24px;
+  }
+
+}
+.problem__title--em{
+
+
+  &::after{
+
+    left: -8%;
+    top: 95%;
+
+    @include mobile {
+display: none;
+    }
+  }
+  @include mobile {
+    font-size: 24px;
+  }
+  
+}
+
+
+.problem__center {
+  position: relative;
+  display: inline-block;
+}
+
+.problem__illust {
+  width: 300px;
+  display: block;
+  background: url(../img/blob.svg) no-repeat center / contain;
+
+  @include mobile {
+    margin: 0 auto;
+    width: 240px;
+  }
+}
+
+/* 吹き出し共通 */
+.problem__bubble {
+  position: absolute;
+  background: #fff;
+  padding: 48px 24px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 200px;
+
+  @include mobile {
+    position: static;
+    margin: 16px auto;
+    width: 90%;
+    padding: 24px 16px;
+    border-radius: 50px;
+  }
+}
+
+// 吹き出し文下線
+.problem__em {
+  display: inline;
+  background: linear-gradient(
+    transparent 60%,
+    rgba(247, 227, 106, 0.6) 60%
+  );
+
+}
+
+
+/* 位置調整（吹き出しの口） */
+.problem__bubble::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.problem__bubble--top-left {
+  top: -40px;
+  left: -200px;
+  &::after {
+    bottom: 10px;
+    right: 0px;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    @include mobile {
+      display: none;
+    }
+  }
+
+
+}
+
+.problem__bubble--top-right {
+  top: -40px;
+  right: -200px;
+  &::after {
+    bottom: 5px;
+    left: 24px;
+    clip-path: polygon(100% 0, 0 30%, 100% 100%);
+    @include mobile {
+      display: none;
+    }
+
+  }
+}
+
+.problem__bubble--bottom-left {
+  bottom: -20px;
+  left: -260px;
+  &::after {
+    top: 8px;
+    right: 0px;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+
+    @include mobile {
+      display: none;
+    }
+
+  }
+
+}
+
+.problem__bubble--bottom-right {
+  bottom: -20px;
+  right: -260px;
+
+  &::after {
+    top: -4px;
+    left: 20px;
+    transform: rotate(-45deg);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+
+        @include mobile {
+          display: none;
+        }
+  }
+
+}
+
+
+/* -----------------------------------------*/
+/* solution */
+/* -----------------------------------------*/
+/* -----------------------------------------*/
+/* 写真背景エリア */
+/* -----------------------------------------*/
+.photo {
+  position: relative; 
+  padding: 160px 0;
+  background: url(../img/bg1.webp) no-repeat center / cover;
+  margin-bottom: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  @include mobile {
+    padding: 80px 0;
+    margin-bottom: 80px;
+
+  }
+
+  &__text {
+    position: relative;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    font-size: 24px;
+
+  @include mobile {
+    font-size: 16px;
+    margin: 0 24px;
+    padding: 40px;
+  }
+  
+  /* 黄色い吹き出し画像 */
+  &::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 130px;
+    background: url(../img/hukidasi.png) no-repeat center / contain;
+    bottom: 70%;
+    left: -22%;
+    z-index: 1;
+    transform: rotate(-12deg);
+
+    @include mobile {
+      width: 120px;
+      height: 90px;
+      bottom: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  }
+
+  &__text--em{
+    font-size: 48px;
+    letter-spacing: 0.08em;
+    text-shadow: var(--shadow);
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+}
+
+/* -----------------------------------------*/
+/* h2　サービス内容について */
+/* -----------------------------------------*/
+
+.solution {
+  padding: 0 16px;
+  margin-bottom: 240px;
+
+  &__title-area{
+    padding: 32px 24px;
+  }
+  /* ｈ2 */
+  &__title {
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title--em {
+
+    &::after {
+      left: 0%;
+      top: 95%;
+      width: 330px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  /* リード文 */
+  &__lead {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 80px;
+    color: #4a4a4a;
+
+    @include mobile {
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+  }
+
+  /* サービス内容について */
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    @include mobile {
+      gap: 40px;
+    }
+  }
+
+  &__card {
+    width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+
+    @include mobile {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+
+      @include mobile {
+        aspect-ratio: 2 / 1;
+      }
+    }
+  }
+
+  &__text{
+    letter-spacing: 0.01em;
+  }
+}
+/* -----------------------------------------*/
+/* サービス内容・料金セクション */
+/* -----------------------------------------*/
+.service-options {
+  margin-bottom: 120px;
+
+  @include mobile {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-size: 28px;
+    padding: 0 24px 12px;
+    margin-bottom: 64px;
+    border-bottom: 2px solid var(--color-accent);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 64px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+}
+
+/* -----------------------------------------*/
+/* ご利用時間と料金 */
+/* -----------------------------------------*/
+.service-time {
+  margin-bottom: 80px;
+
+  @include mobile {
+    margin-bottom: 60px;
+  }  
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      justify-items: center;
+      max-width: 1200px;
+    margin: 0 auto;
+  
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+      }
+  
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+  
+
+.service-plan {
+  width: 70%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s ease;
+
+  @include tablet {
+    height: 250px;
+  }
+
+  @include mobile {
+    height: 220px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  &__label {
+    color: #5A8F2C;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+
+    @include mobile {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__time {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #333;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  /* おすすめプラン */
+  &--recommend {
+    border: 3px solid var(--color-link);
+    background: #f7ffe9;
+    position: relative;
+    width: 80%;
+
+    @include tablet {
+      width: 70%;
+    }
+
+    &::before {
+      content: "おすすめ";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #5A8F2C;
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+  }
+}
+}
+.service-plan__price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+
+  .service-plan__offprice {
+    font-size: 22px;
+    font-weight: 700;
+    color: #5A8F2C;
+    position: relative;
+
+    &::before {
+      content: "⇒";
+      margin-right: 6px;
+      color: #5A8F2C;
+      font-weight: 700;
+    }
+  }
+}
+
+.service-plan__note {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #5A8F2C;
+  font-weight: 700;
+}
+
+/* =========================
+   Voice（お客様の声）
+   ========================= */
+
+.voice {
+  padding: 80px 16px;
+  margin-bottom: 240px;
+  background: url(../img/voicebg.webp) no-repeat left 10px top -52px / cover;
+
+  &__title {
+    margin-bottom: 120px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+  &__title--em::after{
+    top: 100%;
+    left: 0;
+    width: 200px;
+  }
+
+  &__container{
+    width: 50%;
+    margin: 0 auto 60px;
+
+    @include tablet{
+      width: 80%;
+    }
+    }
+
+  &__content {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 40px 60px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+
+    @include mobile {
+      padding: 24px;
+    }
+  }
+
+  /* 上段：画像＋テキスト */
+  &__content--top {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+    }
+  }
+
+  /* 下段：プラン名など */
+  &__content--bottom {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 700;
+    line-height: 1.6;
+    background: lemonchiffon;
+    border-radius: 50px;
+    padding: 16px 80px;
+    display: inline-block;
+    box-shadow: var(--shadow);
+
+
+
+
+  }
+
+  /* 左側：画像＋名前 */
+  &__img-area {
+    width: 30%;
+    text-align: center;
+
+    @include mobile {
+      margin: 0 auto;
+      width: 140px;
+    }
+  }
+
+  &__img {
+    width: 80%;
+    margin: 0 auto 24px;
+    img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+  }
+
+  &__img-text {
+    margin-top: 8px;
+
+    p {
+      font-size: 14px;
+      color: var(--color-text-sub);
+      line-height: 1.4;
+    }
+  }
+
+  /* 右側：テキストエリア */
+  &__text-area {
+    flex: 1;
+    text-align: justify;
+  }
+
+  &__subtitle {
+    p {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 16px;
+      border-bottom: 1px dotted;
+      padding-bottom: 16px;
+
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__text {
+    p {
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: var(--color-text-sub);
+      font-size: 15px;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+  /* ----------------- */
+  /* もっと見るctaボタン */
+  /* ----------------- */
+
+  &__cta{
+    display: inline-block;
+  }
+
+  &__cta-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    padding: 24px 60px;
+    background: var(--color-accent);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    letter-spacing: 0.1em;
+
+    //左右の装飾
+    &::before,
+    &::after{
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 30px;
+      background-color: white;
+      top: 50%;
+    }
+    &::before{
+      transform: translateY(-50%)rotate(-40deg);
+      left: 15%;
+    }
+    &::after{
+      transform: translateY(-50%)rotate(40deg);
+      right: 15%;
+    }
+
+  }
+
+}
+
+
+
+/* ----------------- */
+/* topへ戻るボタン */
+/* ----------------- */
+
+.btn__page-top {
+  position: fixed;
+  right: 5%;
+  bottom: 20%;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+
+  @include mobile {
+    bottom: 15%;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.page-top__a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  @include mobile {
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+
+
+    @include mobile {
+      transform: translateY(-3px);
+    }
+
+    .arrow {
+      &::before,
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+}
+  // 矢印
+  .arrow {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    display: block;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: background-color 0.3s ease;
+    }
+
+    &::before {
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      right: 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+
+/* ----------------- */
+/* banner */
+/* ----------------- */
+#banner {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  top: calc(100vh + 50px);
+  transition: all 0.3s ease;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 表示時 */
+#banner.show {
+  opacity: 1;
+  visibility: visible;
+  top: calc(100vh - 120px);
+
+  @include mobile {
+    top: calc(100vh - 110px);
+  }
+}
+
+/* 画像リンクは中央だけ */
+.banner__link {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.banner__link img {
+  width: 400px;
+  @include mobile {
+    width: 280px;
+  }
+}
+/* ----------------- */
+/* footer */
+/* ----------------- */
+.footer {
+  background-color: var(--color-footer);
+  padding:40px 0;
+
+  &__text {
+    color: #fff;
+    text-align: center;
+    line-height: 1.8;
+  }
+}

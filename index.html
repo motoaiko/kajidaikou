@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- SEO対策 -->
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="robots" content="noindex,nofollow">
+		
+		<!-- OGP（SNS共有用） -->
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="家事代行サービス Sora Sapport">
+		
+		<!-- リセットCSS -->
+		<link rel="stylesheet" href="css/ress.css">
+
+		<!-- Slick -->
+		<link rel="stylesheet" href="css/slick.css">
+		<link rel="stylesheet" href="css/slick-theme.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- favicon -->
+		<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+		<script src="https://kit.fontawesome.com/0ec846d745.js" crossorigin="anonymous"></script>
+
+		<!-- googleフォント -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- フォント読み込み(M+PLUS+Rounded+1c/Quicksand) -->
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Quicksand&display=swap" rel="stylesheet">
+		
+		<!-- js -->
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+		<!--  他プラグイン -->
+		<script src="js/slick.min.js"></script>
+
+
+		<title>家事代行サービス Sora Sapport</title>
+	</head>
+	<body>
+		<header id="header" class="header">
+			<div class="header__inner">
+				<h1 class="header__logo">
+					<a href="#header"><img src="img/logo.png" alt="Sora Sapport ロゴ"></a>
+				</h1>
+			
+				<nav class="header__nav" >
+					<ul class="header__list">
+						<li class="header__item">
+							<a href="#">TOP</a>
+						</li>
+						<li class="header__item">
+							<a href="#">サービスのご案内</a>
+						</li>
+						<li class="header__item">
+							<a href="#">お客様の声</a>
+						</li>
+						<li class="header__item">
+							<a href="#">お問い合わせ</a>
+						</li>
+
+						<!-- Facebook --> 
+						<li> 
+						<a href="#" class="header__sns-icon header__sns-icon--fb"> <svg class="icon-facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z"/> </svg> </a> 
+						</li> 
+						<!-- Instagram --> 
+						<li> 
+						<a href="#" class="header__sns-icon header__sns-icon--ig"> <svg class="icon-instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> <path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/> </svg> </a> 
+						</li>
+						<!-- CTAボタン -->
+						<li class="header__item header__item--cta">
+							<a href="#contact" class="header__cta heading">初回お試し</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<!-- ハンバーガーメニュー -->
+            <button type="button" id="hamburger" class="hamburger" aria-label="メニューを開く">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="menu-text">menu</span>
+			</button>
+		</header>
+		<main>
+			<section class="fv">
+				<div class="fv__bg fv__bg--left"></div>
+				<div class="fv__bg fv__bg--right"></div>
+				<div class="fv__content">
+					<h2 class="heading fv__title">
+						家事の時間を<br>
+						あなたの <span class="fv__title--em">大切な時間</span>へ。<br>
+					</h2>
+					<p class="fv__subtitle">
+						忙しさで手が回らない家事を、<br class="mobile">
+						<span class="common__subtitle--em"> SoraSapport</span>が<br class="mobile">しっかりサポート。 <br>
+						家族との時間、<br class="mobile">自分のための時間を、<br class="mobile">もっと大切にできる暮らしへ。
+					</p>
+					<div class="fv__cta-area header__item--cta">
+						<a href="#" class="fv__cta header__cta heading">初回お試しはこちらから</a>
+					</div>
+				</div>
+			</section>
+			
+			<section class="problem">
+				<h2 class="problem__title heading">
+					<span class="common__title--en">Daily Housework Stress</span>
+					<span class="problem__title--em common__title--em"> 家事の負担</span>、<br class="mobile">ひとりで抱えていませんか?
+				</h2>
+
+				<div class="problem__center">
+					<img src="img/1533.png" alt="" class="problem__illust">
+			  
+				  <div class="problem__bubble problem__bubble--top-left">
+					在宅ワークの日、<span class="problem__em"> 子どもに構ってあげられない…</span>
+				  </div>
+			  
+				  <div class="problem__bubble problem__bubble--top-right">
+					帰宅後はクタクタで、<span class="problem__em">家事まで手が回らない…</span>
+				  </div>
+			  
+				  <div class="problem__bubble problem__bubble--bottom-left">
+					下の子の世話で、<span class="problem__em">上の子に手が回らない…</span>
+				  </div>
+			  
+				  <div class="problem__bubble problem__bubble--bottom-right">
+					週末は家事で終わってしまい、<span class="problem__em">休めない…</span>
+				</div>
+				
+			</section>
+			
+
+			<section class="solution">
+
+				<!-- 写真背景エリア -->
+				<div class="photo">
+					<div class="photo__text">
+						<span class="common__subtitle--em"> SoraSapport</span>
+						の <br class="mobile"> 家事代行サービスを<br class="mobile">
+						<span class="photo__text--em">お試し</span>
+						してみませんか？
+					</div>
+				</div>
+
+				<!-- h2 -->
+				<h2 class="solution__title heading">
+					<span class="common__title--en">Our Service</span>
+					あなたの<span class="solution__title--em common__title--em">暮らしを軽くする</span><br class="mobile">サポート
+				</h2>
+				<p class="solution__lead">
+					初めてご利用の方は、<span>60分プランのみ20％OFF</span>でお試しいただけます。<br>
+					単発でも定期でもご利用いただけますので、まずは気軽にお試しください。
+				</p>
+
+				<!-- サービス内容について -->
+				<div class="service-options">
+					<h3 class="service-options__title ">サービス内容について
+					</h3>
+
+					<ul class="solution__cards">
+
+						<li class="solution__card">
+							<img src="img/souji3.png" alt="">
+							<div class="solution__title-area">
+								<div class="solution__sub-title common__label">
+									水回りを<br class="pc">徹底的にきれいに
+								</div>
+								<p class="solution__text">
+									トイレ・洗面所・お風呂・キッチンなど、毎日使う場所を丁寧にお掃除します。
+								</p>
+							</div>
+						</li>
+						<li class="solution__card">
+							<img src="img/souji4.png" alt="">
+							<div class="solution__title-area">
+								<div class="solution__sub-title common__label">
+									リビング・ダイニングを<br class="pc">すっきり快適に
+								</div>
+								<p class="solution__sub">
+									片付け・収納・整頓・掃除機掛けまで、くつろげる空間づくりをお手伝いします。
+								</p>
+							</div>
+						</li>
+						<li class="solution__card">
+							<img src="img/souji2.png" alt="">
+							<div class="solution__title-area">
+								<div class="solution__sub-title common__label">
+									洗濯まわりを<br class="pc">まるごとサポート
+								</div>
+								<p class="solution__sub">
+									洗濯・干す・畳むまで、毎日の家事をスムーズにするお手伝いをします。
+								</p>
+							</div>
+						</li>					
+					</ul>
+
+				</div>
+
+				<!-- ご利用時間と料金について -->
+				<div class="service-time service-options">
+					<h3 class="service-options__title">ご利用時間と料金について
+					</h3>
+
+					<ul class="service-time__cards">
+				
+						<li class="service-plan">
+							<p class="service-plan__label common__label">ちょっとだけ <br>手伝ってほしい時に</p>
+							<h3 class="service-plan__title">ショートプラン</h3>
+							<p class="service-plan__time">30分</p>
+							<p class="service-plan__price">3,300円</p>
+						</li>
+					
+						<li class="service-plan service-plan--recommend">
+							<p class="service-plan__label common__label">一番選ばれています！<br>まずはお試しに最適</p>
+							<h3 class="service-plan__title">スタンダードプラン</h3>
+							<p class="service-plan__time">60分</p>
+							<p class="service-plan__price">
+							5,500円
+							<span class="service-plan__offprice">4,400円</span>
+							</p>
+							<p class="service-plan__note">※初回お試し20％OFF</p>
+						</li>
+
+						<li class="service-plan">
+						<p class="service-plan__label common__label">しっかり<br>頼みたい方に</p>
+						<h3 class="service-plan__title">しっかりプラン</h3>
+						<p class="service-plan__time">90分</p>
+						<p class="service-plan__price">8,250円</p>
+						</li>
+					
+						<li class="service-plan">
+						<p class="service-plan__label common__label">家中まとめて<br>お願いしたい時に</p>
+						<h3 class="service-plan__title">ロングプラン</h3>
+						<p class="service-plan__time">120分</p>
+						<p class="service-plan__price">11,000円</p>
+						</li>
+					</ul>
+				</div>
+
+			</section>
+
+			<section id="voice" class="voice">
+
+				<h2 class="voice__title heading">
+					<span class="common__title--en">Voice</span>
+					<span class="voice__title--em common__title--em">お客様の声</span>
+				</h2>
+
+				<div class="voice__wrapper">
+					<ul class="voice__container">
+						<li class="voice__content">
+							<div class="voice__content--top">
+						
+							<!-- 左：画像＋名前 -->
+							<div class="voice__img-area">
+							<div class="voice__img">
+								<img src="img/1285.png" alt="">
+							</div>
+							<div class="voice__img-text">
+								<p>○○○さん</p>
+								<p>京都市左京区</p>
+							</div>
+							</div>
+						
+							<!-- 右：テキスト -->
+							<div class="voice__text-area">
+							<div class="voice__subtitle">
+								<p>子供と遊ぶ時間と、心の余裕が生まれました</p>
+							</div>
+						
+							<div class="voice__text">
+								<p>子供が産まれてから、リビングの汚れが気になり、60分だけお願いするようになりました。</p>
+								<p>リビングダイニングに散らかったおもちゃの片付けと、埃取り、掃除機掛けの後に、なかなか手の回らない床の水拭きまでしてもらっています。</p>
+							</div>
+							</div>
+						
+						</div>
+						
+						<div class="voice__content--bottom">
+							<p>スタンダードプラン / <br class="mobile">トイレ・洗面所・お風呂・キッチン</p>
+						</div>
+						
+						</li>
+						<li class="voice__content">
+						<div class="voice__content--top">
+						
+							<!-- 左：画像＋名前 -->
+							<div class="voice__img-area">
+							<div class="voice__img">
+								<img src="img/1285.png" alt="">
+							</div>
+							<div class="voice__img-text">
+								<p>○○○さん</p>
+								<p>京都市左京区</p>
+							</div>
+							</div>
+						
+							<!-- 右：テキスト -->
+							<div class="voice__text-area">
+							<div class="voice__subtitle">
+								<p>子供と遊ぶ時間と、心の余裕が生まれました</p>
+							</div>
+						
+							<div class="voice__text">
+								<p>子供が産まれてから、リビングの汚れが気になり、60分だけお願いするようになりました。</p>
+								<p>リビングダイニングに散らかったおもちゃの片付けと、埃取り、掃除機掛けの後に、なかなか手の回らない床の水拭きまでしてもらっています。</p>
+							</div>
+							</div>
+						
+						</div><!-- /.voice__content--top -->
+						
+						<div class="voice__content--bottom">
+							<p>スタンダードプラン / トイレ・洗面所・お風呂・キッチン</p>
+						</div>
+						
+						</li>
+						
+								
+				</ul>
+				</div>
+
+
+				<div class="voice__cta">
+					<a href="#" class="voice__cta-btn">お客様の声をもっと見る</a>
+				</div>
+		</section>
+
+		<section class="cta-final">
+			<h2 class="cta-final__title">初回割引キャンペーン</h2>
+			<p class="cta-final__text">忙しいあなたの暮らしを軽くします。</p>
+		
+			<a href="#" class="cta-final__btn cta-final__btn--primary">
+				初回割引を申し込む
+			</a>
+			
+			</section>
+		</main>
+		
+		<!-- page-top btn -->
+		<div id="page-top" class="btn btn__page-top">
+			<a class="page-top__a" href="#slider">
+				<span class="arrow"></span>
+			</a>
+		</div>
+
+		<!-- bannar -->
+		<div id="banner" class="banner">
+			<div class="banner__bg"></div><!-- 背景 -->
+			<a href="#" class="banner__link">
+				<img src="img/banner.png" alt="">
+			</a>
+		</div>
+		
+		<!-- footer -->
+		<footer class="footer">
+		<p class="footer__text">&copy;家事代行サービス Sora Sapport<br class="mobile">2026 All rights reserved.</p>
+		</footer>
+
+
+		<!-- スクリプト -->
+		<script src="js/index.js"></script>
+	</body>
+</html>
