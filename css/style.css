@@ -151,6 +151,11 @@ a:hover {
   top: 100%;
   left: 0px;
 }
+@media (max-width: 800px) {
+  .common__title--em::after {
+    display: none;
+  }
+}
 .common__label {
   font-weight: 700;
   font-size: 18px;
@@ -1344,7 +1349,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   #banner.show {
-    top: calc(100vh - 110px);
+    top: calc(100vh - 85px);
   }
 }
 
