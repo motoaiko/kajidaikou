@@ -496,7 +496,7 @@ body.open {
   &__content {
     position: relative;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.3) no-repeat center / contain;
+    background: rgba(255, 255, 255, 0.8) no-repeat center / contain;
     padding: 48px 40px;
     text-align: center;
     border-radius: 150px;
@@ -870,10 +870,7 @@ body.open {
       max-width: 320px;
     }
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    }
+
 
     img {
       width: 100%;
@@ -964,10 +961,6 @@ body.open {
     height: 220px;
   }
 
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  }
 
   &__label {
     color: #5A8F2C;
@@ -1074,7 +1067,7 @@ body.open {
   padding: 80px 16px;
   margin-bottom: 240px;
   // 背景明度を20％にして文字を読みやすく
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(../img/voicebg.webp) no-repeat left 10px top 0px / cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/voicebg.webp) no-repeat left 10px top 0px / cover;
   background-blend-mode: multiply;
 
   &__title {
@@ -1106,7 +1099,7 @@ body.open {
     }
 
   &__content {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 16px;
     padding: 40px 60px;
     box-shadow: var(--shadow);
@@ -1352,12 +1345,13 @@ body.open {
 /* ----------------- */
 /* banner */
 /* ----------------- */
-#banner {
+.banner {
   opacity: 0;
   visibility: hidden;
   position: fixed;
   width: 100%;
-  top: calc(100vh + 50px);
+  left: 0;
+  bottom: -100px;
   transition: all 0.3s ease;
   z-index: 10;
   -webkit-backdrop-filter: blur(5px);
@@ -1366,14 +1360,14 @@ body.open {
 }
 
 /* 表示時 */
-#banner.show {
+.banner.show {
   opacity: 1;
   visibility: visible;
-  top: calc(100vh - 120px);
+  bottom: 0;
 
   @include mobile {
-    top: calc(100vh - 85px);
-  }
+    bottom: 0;
+    }
 }
 
 /* 画像リンクは中央だけ */
@@ -1383,9 +1377,11 @@ body.open {
 }
 
 .banner__link img {
-  width: 400px;
+  margin: 0 auto;
+  width: 500px;
+
   @include mobile {
-    width: 280px;
+    width: 90%;
   }
 }
 /* ----------------- */

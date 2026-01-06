@@ -519,7 +519,7 @@ a:hover {
 .fv__content {
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.3) no-repeat center/contain;
+  background: rgba(255, 255, 255, 0.8) no-repeat center/contain;
   padding: 48px 40px;
   text-align: center;
   border-radius: 150px;
@@ -880,10 +880,6 @@ a:hover {
     max-width: 320px;
   }
 }
-.solution__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
 .solution__card img {
   width: 100%;
   display: block;
@@ -978,10 +974,6 @@ a:hover {
   .service-plan {
     height: 220px;
   }
-}
-.service-plan:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 .service-plan__label {
   color: #5A8F2C;
@@ -1082,7 +1074,7 @@ a:hover {
 .voice {
   padding: 80px 16px;
   margin-bottom: 240px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/voicebg.webp) no-repeat left 10px top 0px/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/voicebg.webp) no-repeat left 10px top 0px/cover;
   background-blend-mode: multiply;
   /* 上段：画像＋テキスト */
   /* 下段：プラン名など */
@@ -1119,7 +1111,7 @@ a:hover {
   }
 }
 .voice__content {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
   padding: 40px 60px;
   box-shadow: var(--shadow);
@@ -1328,12 +1320,13 @@ a:hover {
 /* ----------------- */
 /* banner */
 /* ----------------- */
-#banner {
+.banner {
   opacity: 0;
   visibility: hidden;
   position: fixed;
   width: 100%;
-  top: calc(100vh + 50px);
+  left: 0;
+  bottom: -100px;
   transition: all 0.3s ease;
   z-index: 10;
   -webkit-backdrop-filter: blur(5px);
@@ -1342,14 +1335,14 @@ a:hover {
 }
 
 /* 表示時 */
-#banner.show {
+.banner.show {
   opacity: 1;
   visibility: visible;
-  top: calc(100vh - 120px);
+  bottom: 0;
 }
 @media (max-width: 800px) {
-  #banner.show {
-    top: calc(100vh - 85px);
+  .banner.show {
+    bottom: 0;
   }
 }
 
@@ -1361,11 +1354,12 @@ a:hover {
 }
 
 .banner__link img {
-  width: 400px;
+  margin: 0 auto;
+  width: 500px;
 }
 @media (max-width: 800px) {
   .banner__link img {
-    width: 280px;
+    width: 90%;
   }
 }
 
