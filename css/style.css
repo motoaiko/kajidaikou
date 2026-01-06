@@ -112,6 +112,9 @@ a:hover {
   font-weight: 700;
   line-height: 1.4;
   position: relative;
+  text-shadow: var(--shadow);
+  margin-bottom: 120px;
+  text-align: center;
 }
 @media (max-width: 800px) {
   .heading {
@@ -130,6 +133,8 @@ a:hover {
   position: relative;
   display: inline-block;
   font-size: 40px;
+  letter-spacing: 0.1em;
+  padding: 0 8px;
 }
 @media (max-width: 800px) {
   .common__title--em {
@@ -143,6 +148,8 @@ a:hover {
   height: 18px;
   background-image: url(../img/line-removebg-preview.png);
   position: absolute;
+  top: 100%;
+  left: 0px;
 }
 .common__label {
   font-weight: 700;
@@ -613,21 +620,6 @@ a:hover {
   }
 }
 
-.problem__title--em::after {
-  left: -8%;
-  top: 95%;
-}
-@media (max-width: 800px) {
-  .problem__title--em::after {
-    display: none;
-  }
-}
-@media (max-width: 800px) {
-  .problem__title--em {
-    font-size: 24px;
-  }
-}
-
 .problem__center {
   position: relative;
   display: inline-block;
@@ -838,7 +830,7 @@ a:hover {
 .solution__title--em::after {
   left: 0%;
   top: 95%;
-  width: 330px;
+  width: 370px;
 }
 @media (max-width: 800px) {
   .solution__title--em::after {
@@ -1085,7 +1077,8 @@ a:hover {
 .voice {
   padding: 80px 16px;
   margin-bottom: 240px;
-  background: url(../img/voicebg.webp) no-repeat left 10px top -52px/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/voicebg.webp) no-repeat left 10px top 0px/cover;
+  background-blend-mode: multiply;
   /* 上段：画像＋テキスト */
   /* 下段：プラン名など */
   /* 左側：画像＋名前 */
@@ -1096,16 +1089,20 @@ a:hover {
 }
 .voice__title {
   margin-bottom: 120px;
+  text-align: center;
 }
 @media (max-width: 800px) {
   .voice__title {
     margin-bottom: 40px;
   }
 }
+.voice__title--en, .voice__title--em {
+  color: #fff;
+}
 .voice__title--em::after {
   top: 100%;
   left: 0;
-  width: 200px;
+  width: 240px;
 }
 .voice__container {
   width: 50%;
@@ -1208,11 +1205,13 @@ a:hover {
   }
 }
 .voice__cta {
-  display: inline-block;
+  text-align: center; /* 中身（ボタン）を中央に寄せる */
+  margin-top: 60px; /* お客様の声カードとの間隔を調整 */
 }
 .voice__cta-btn {
   position: relative;
-  display: flex;
+  display: inline-flex; /* flexからinline-flexにするとtext-alignが効きやすくなります */
+  margin: 0 auto; /* 念のため */
   justify-content: center;
   align-items: center;
   width: 240px;
@@ -1376,4 +1375,53 @@ a:hover {
   color: #fff;
   text-align: center;
   line-height: 1.8;
+}
+
+/* ----------------- */
+/* faq */
+/* ----------------- */
+.faq__title--em::after {
+  width: 330px;
+}
+.faq__wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.faq__item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq__item[open] .faq__question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq__question {
+  list-style: none;
+  padding: 24px 60px 24px 24px;
+  font-weight: 700;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.faq__question::after {
+  content: "＋";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+.faq__answer {
+  padding: 0 24px 24px;
+  line-height: 1.8;
+  border-top: 1px solid #f9f9f9;
+  text-align: justify;
 }/*# sourceMappingURL=style.css.map */

@@ -93,6 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			header.classList.remove('is-scrolled');
 		}
 	});
+	/* ------------------------------------- */
+	// フッター年号自動更新
+	/* ------------------------------------- */
+	// new Date()：現在の日付・時刻情報を持つDateオブジェクトを作成
+	// .getFullYear()：そのDateオブジェクトから「年」だけを取り出す
+	document.getElementById('year').textContent = new Date().getFullYear();
 
 	// ↓全てのJSの閉じカッコ
 });

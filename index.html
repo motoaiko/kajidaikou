@@ -7,6 +7,8 @@
 		<!-- SEO対策 -->
 		<meta name="description" content="">
 		<meta name="keywords" content="">
+
+		<!-- ポートフォリオ用/検索避け -->
 		<meta name="robots" content="noindex,nofollow">
 		
 		<!-- OGP（SNS共有用） -->
@@ -66,7 +68,7 @@
 							<a href="#">お客様の声</a>
 						</li>
 						<li class="header__item">
-							<a href="#">お問い合わせのみ</a>
+							<a href="#">お問い合わせ</a>
 						</li>
 
 						<!-- Facebook --> 
@@ -79,7 +81,7 @@
 						</li>
 						<!-- CTAボタン -->
 						<li class="header__item header__item--cta">
-							<a href="#contact" class="header__cta heading">初回お試し</a>
+							<a href="#contact" class="header__cta">初回お試し</a>
 						</li>
 					</ul>
 				</nav>
@@ -251,7 +253,7 @@
 			<section id="voice" class="voice">
 
 				<h2 class="voice__title heading">
-					<span class="common__title--en">Voice</span>
+					<span class="voice__title--en common__title--en">Voice</span>
 					<span class="voice__title--em common__title--em">お客様の声</span>
 				</h2>
 
@@ -332,7 +334,23 @@
 				<div class="voice__cta">
 					<a href="#" class="voice__cta-btn">お客様の声をもっと見る</a>
 				</div>
-		</section>
+			</section>
+
+			<section id="faq" class="faq" >
+				<h2 class="faq__title heading">
+					<span class="faq__title--en common__title--en">Question</span>
+					<span class="faq__title--em common__title--em">よくあるご質問</span>
+				</h2>
+
+				<div class="faq__wrapper">
+					<details class="faq__item">
+					<summary class="faq__question">どんな家事をお願いできますか？</summary>
+					<div class="faq__answer">
+						<p>掃除、洗濯、買い物、お料理など、お客様のご要望に合わせて柔軟に対応いたします。当日の急な追加依頼も、時間内であれば可能ですのでお気軽にご相談ください。</p>
+					</div>
+					</details>
+				</div>
+			</section>
 
 		<section class="cta-final">
 			<h2 class="cta-final__title">初回割引キャンペーン</h2>
@@ -362,9 +380,10 @@
 		
 		<!-- footer -->
 		<footer class="footer">
-		<p class="footer__text">&copy;家事代行サービス Sora Sapport<br class="mobile">2026 All rights reserved.</p>
+			<p class="footer__text">
+				&copy;家事代行サービス Sora Sapport<br class="mobile"><span id="year"></span> All rights reserved.
+			</p>
 		</footer>
-
 
 		<!-- スクリプト -->
 		<script src="js/index.js"></script>

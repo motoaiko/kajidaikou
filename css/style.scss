@@ -58,6 +58,11 @@ a {
   font-weight: 700; 
   line-height: 1.4;
   position: relative;
+  text-shadow:var(--shadow); 
+  margin-bottom: 120px;
+  text-align: center;
+
+  
 
   @include mobile {
     font-size: 18px;
@@ -73,6 +78,8 @@ a {
     position: relative;
     display: inline-block;
     font-size: 40px;
+    letter-spacing: 0.1em;
+    padding: 0 8px;
 
     @include mobile {
       font-size: 24px;
@@ -85,6 +92,8 @@ a {
       height: 18px;
       background-image: url(../img/line-removebg-preview.png);
       position: absolute;
+      top: 100%;
+      left: 0px;
     }
   }
   &__label{
@@ -590,24 +599,6 @@ body.open {
   }
 
 }
-.problem__title--em{
-
-
-  &::after{
-
-    left: -8%;
-    top: 95%;
-
-    @include mobile {
-display: none;
-    }
-  }
-  @include mobile {
-    font-size: 24px;
-  }
-  
-}
-
 
 .problem__center {
   position: relative;
@@ -828,7 +819,7 @@ display: none;
     &::after {
       left: 0%;
       top: 95%;
-      width: 330px;
+      width: 370px;
 
       @include mobile {
         display: none;
@@ -1078,19 +1069,27 @@ display: none;
 .voice {
   padding: 80px 16px;
   margin-bottom: 240px;
-  background: url(../img/voicebg.webp) no-repeat left 10px top -52px / cover;
+  // 背景明度を20％にして文字を読みやすく
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(../img/voicebg.webp) no-repeat left 10px top 0px / cover;
+  background-blend-mode: multiply;
 
   &__title {
     margin-bottom: 120px;
+    text-align: center;
 
     @include mobile {
       margin-bottom: 40px;
     }
   }
+  &__title--en,
+  &__title--em{
+      color: #fff; 
+  }
+
   &__title--em::after{
     top: 100%;
     left: 0;
-    width: 200px;
+    width: 240px;
   }
 
   &__container{
@@ -1139,10 +1138,6 @@ display: none;
     padding: 16px 80px;
     display: inline-block;
     box-shadow: var(--shadow);
-
-
-
-
   }
 
   /* 左側：画像＋名前 */
@@ -1213,13 +1208,17 @@ display: none;
   /* もっと見るctaボタン */
   /* ----------------- */
 
-  &__cta{
-    display: inline-block;
+  &__cta {
+    text-align: center;  /* 中身（ボタン）を中央に寄せる */
+    margin-top: 60px;    /* お客様の声カードとの間隔を調整 */
   }
+
+
 
   &__cta-btn{
     position: relative;
-    display: flex;
+    display: inline-flex; /* flexからinline-flexにするとtext-alignが効きやすくなります */
+    margin: 0 auto;       /* 念のため */
     justify-content: center;
     align-items: center;
     width: 240px;
@@ -1396,5 +1395,67 @@ display: none;
     color: #fff;
     text-align: center;
     line-height: 1.8;
+  }
+}
+/* ----------------- */
+/* faq */
+/* ----------------- */
+.faq {
+  &__title--em{
+    &::after{
+      width: 330px;
+    }
+  }
+
+  &__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  &__item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden; // 中身がはみ出ないように
+    transition: all 0.3s ease;
+
+    // 開いている時のスタイル
+    &[open] {
+      .faq__question::after {
+        transform: translateY(-50%) rotate(45deg); // ＋を×に変える
+      }
+    }
+  }
+
+  &__question {
+    list-style: none; // デフォルトの矢印を消す（Chromeなど）
+    padding: 24px 60px 24px 24px;
+    font-weight: 700;
+    position: relative;
+    user-select: none; // テキスト選択を防ぐ
+
+    // プラス（＋）アイコン
+    &::after {
+      content: "＋";
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: var(--color-accent); // アクセントカラー
+      transition: transform 0.3s ease;
+    }
+    
+  }
+
+  &__answer {
+    padding: 0 24px 24px;
+    line-height: 1.8;
+    border-top: 1px solid #f9f9f9;
+    text-align: justify;
+    
   }
 }
