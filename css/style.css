@@ -1202,13 +1202,13 @@ a:hover {
   }
 }
 .voice__cta {
-  text-align: center; /* 中身（ボタン）を中央に寄せる */
-  margin-top: 60px; /* お客様の声カードとの間隔を調整 */
+  text-align: center;
+  margin-top: 60px;
 }
 .voice__cta-btn {
   position: relative;
-  display: inline-flex; /* flexからinline-flexにするとtext-alignが効きやすくなります */
-  margin: 0 auto; /* 念のため */
+  display: inline-flex;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   width: 240px;
@@ -1332,9 +1332,9 @@ a:hover {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
+  /* 表示時 */
+  /* 画像リンクは中央だけ */
 }
-
-/* 表示時 */
 .banner.show {
   opacity: 1;
   visibility: visible;
@@ -1345,14 +1345,11 @@ a:hover {
     bottom: 0;
   }
 }
-
-/* 画像リンクは中央だけ */
 .banner__link {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
-
 .banner__link img {
   margin: 0 auto;
   width: 500px;
