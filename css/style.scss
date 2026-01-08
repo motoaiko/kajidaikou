@@ -117,6 +117,10 @@ a {
     font-size: 32px;
     font-weight: 700;
     font-family: $font-en;
+
+    @include mobile{
+      font-size: 24px;
+    }
   }
 
   /* 英字サブタイトル */
@@ -508,8 +512,9 @@ body.open {
     border-radius: 150px;
 
     @include mobile {
-      padding: 48px 24px;
+      padding: 48px 16px;
       border-radius: 50px;
+      width: 80%;
     }
   }
 
@@ -521,7 +526,7 @@ body.open {
     margin-bottom:40px;
 
     @include mobile {
-      font-size:24px;
+      font-size:18px;
     }
   }
 
@@ -583,7 +588,8 @@ body.open {
     margin: 0 auto;
 
     @include mobile {
-      width: auto;
+      max-width: 24
+      0px;
     }
   }
 }
@@ -811,6 +817,10 @@ body.open {
 .solution {
   padding: 0 16px;
   margin-bottom: 240px;
+
+  @include mobile{
+    margin-bottom: 80px;
+  }
 
   &__title-area{
     padding: 32px 24px;
@@ -1076,6 +1086,10 @@ body.open {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/voicebg.webp) no-repeat left 10px top 0px / cover;
   background-blend-mode: multiply;
 
+  @include mobile{
+    margin-bottom: 80px;
+  }
+
   &__title {
     margin-bottom: 120px;
     text-align: center;
@@ -1131,16 +1145,24 @@ body.open {
 
   /* 下段：プラン名など */
   &__content--bottom {
-    margin-top: 32px;
-    font-size: 14px;
     color: var(--color-accent);
     font-weight: 700;
-    line-height: 1.6;
     background: lemonchiffon;
     border-radius: 50px;
     padding: 16px 80px;
-    display: inline-block;
     box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0;
+    margin: 32px auto 0;
+
+    @include mobile{
+      border-radius: 30px;
+      padding: 16px 24px;
+      width: 80%;
+      margin-top: 16px;
+    }
   }
 
   /* 左側：画像＋名前 */
@@ -1150,7 +1172,7 @@ body.open {
 
     @include mobile {
       margin: 0 auto;
-      width: 140px;
+      width: 70%;
     }
   }
 
@@ -1190,7 +1212,7 @@ body.open {
       padding-bottom: 16px;
 
       @include mobile {
-        font-size: 18px;
+        font-size: 14px;
       }
     }
   }

@@ -176,6 +176,11 @@ a:hover {
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
 }
+@media (max-width: 800px) {
+  .common__subtitle--em {
+    font-size: 24px;
+  }
+}
 .common__title--en {
   display: block;
   font-family: "Quicksand", sans-serif;
@@ -530,8 +535,9 @@ a:hover {
 }
 @media (max-width: 800px) {
   .fv__content {
-    padding: 48px 24px;
+    padding: 48px 16px;
     border-radius: 50px;
+    width: 80%;
   }
 }
 .fv__title {
@@ -543,7 +549,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .fv__title {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 .fv__title--em {
@@ -601,7 +607,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .fv__cta-area {
-    width: auto;
+    max-width: 24 0px;
   }
 }
 
@@ -824,6 +830,11 @@ a:hover {
   /* ｈ2 */
   /* リード文 */
   /* サービス内容について */
+}
+@media (max-width: 800px) {
+  .solution {
+    margin-bottom: 80px;
+  }
 }
 .solution__title-area {
   padding: 32px 24px;
@@ -1088,6 +1099,11 @@ a:hover {
   /* もっと見るctaボタン */
   /* ----------------- */
 }
+@media (max-width: 800px) {
+  .voice {
+    margin-bottom: 80px;
+  }
+}
 .voice__title {
   margin-bottom: 120px;
   text-align: center;
@@ -1139,16 +1155,25 @@ a:hover {
   }
 }
 .voice__content--bottom {
-  margin-top: 32px;
-  font-size: 14px;
   color: var(--color-accent);
   font-weight: 700;
-  line-height: 1.6;
   background: lemonchiffon;
   border-radius: 50px;
   padding: 16px 80px;
-  display: inline-block;
   box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0;
+  margin: 32px auto 0;
+}
+@media (max-width: 800px) {
+  .voice__content--bottom {
+    border-radius: 30px;
+    padding: 16px 24px;
+    width: 80%;
+    margin-top: 16px;
+  }
 }
 .voice__img-area {
   width: 30%;
@@ -1157,7 +1182,7 @@ a:hover {
 @media (max-width: 800px) {
   .voice__img-area {
     margin: 0 auto;
-    width: 140px;
+    width: 70%;
   }
 }
 .voice__img {
@@ -1191,7 +1216,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .voice__subtitle p {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .voice__text p {
