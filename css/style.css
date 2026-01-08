@@ -39,6 +39,7 @@
   --color-footer: #4E7A28;
   /* Shadow */
   --shadow: 0 2px 4px rgba(0, 0, 0, .3);
+  --main-font:16px;
 }
 
 /* =========================
@@ -56,7 +57,7 @@
 /* ----------------- */
 body {
   overflow-x: hidden;
-  font-size: 16px;
+  font-size: var(--main-font);
   font-family: "Noto Sans JP", sans-serif;
   color: var(--color-text-main);
   line-height: 1.6;
@@ -220,7 +221,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-  height: 80px;
+  height: 60px;
 }
 @media (max-width: 800px) {
   .header {
@@ -237,12 +238,15 @@ a:hover {
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  width: 150px;
+  width: 120px;
 }
 @media (max-width: 800px) {
   .header__logo {
-    width: 120px;
+    width: 100px;
   }
+}
+.header__logo.is-scrolled {
+  width: 100px;
 }
 .header__logo img {
   width: 100%;
@@ -400,8 +404,8 @@ a:hover {
   .hamburger {
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: 40%;
     background-color: var(--color-btn);
     z-index: 10000;
@@ -414,17 +418,17 @@ a:hover {
   .hamburger .bar {
     position: absolute;
     transition: 0.5s;
-    margin: 13px 30%;
+    margin: 16px 30%;
     width: 40%;
     height: 3px;
     background-color: #fff;
     border-radius: 5px;
   }
   .hamburger .bar:nth-child(1) {
-    top: 0;
+    top: -4px;
   }
   .hamburger .bar:nth-child(2) {
-    top: 15px;
+    top: 10px;
   }
   .hamburger .menu-text {
     display: block;
@@ -452,11 +456,11 @@ a:hover {
   }
   body.open .hamburger .bar:nth-child(1) {
     transform: rotate(45deg);
-    top: 10px;
+    top: 4px;
   }
   body.open .hamburger .bar:nth-child(2) {
     transform: rotate(-45deg);
-    top: 10px;
+    top: 4px;
   }
   body.open .hamburger .menu-text {
     color: var(--color-btn);
@@ -1339,6 +1343,7 @@ a:hover {
   opacity: 1;
   visibility: visible;
   bottom: 0;
+  overflow: hidden;
 }
 @media (max-width: 800px) {
   .banner.show {

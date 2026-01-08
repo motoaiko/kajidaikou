@@ -5,7 +5,7 @@
 /* ----------------- */
 body {
   overflow-x: hidden;
-  font-size:16px;
+  font-size:var(--main-font);
   font-family: $font-main;
   color: var(--color-text-main);
   line-height: 1.6;
@@ -165,7 +165,7 @@ a {
   &.is-scrolled { 
     background: rgba(255, 255, 255, 0.5); 
     backdrop-filter: blur(4px); 
-    height: 80px;
+    height: 60px;
   }
 
   @include mobile {
@@ -183,11 +183,17 @@ a {
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
-    width: 150px;
+    width: 120px;
+
     
     @include mobile {
-      width: 120px;
+      width: 100px;
     }
+
+    &.is-scrolled { 
+      width: 100px;
+    }
+
 
     img {
       width: 100%;
@@ -362,8 +368,8 @@ a {
   @include tablet {
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: 40%;
     background-color: var(--color-btn);
     z-index: 10000;
@@ -376,18 +382,18 @@ a {
     .bar {
       position: absolute;
       transition: 0.5s;
-      margin: 13px 30%;
+      margin: 16px 30%;
       width: 40%;
       height: 3px;
       background-color: #fff;
       border-radius: 5px;
 
       &:nth-child(1) {
-        top: 0;
+        top: -4px;
       }
 
       &:nth-child(2) {
-        top: 15px;
+        top: 10px;
       }
     }
 
@@ -418,12 +424,12 @@ body.open {
 
         &:nth-child(1) {
           transform: rotate(45deg);
-          top: 10px;
+          top: 4px;
         }
 
         &:nth-child(2) {
           transform: rotate(-45deg);
-          top: 10px;
+          top: 4px;
         }
       }
 
@@ -1363,6 +1369,7 @@ body.open {
     opacity: 1;
     visibility: visible;
     bottom: 0;
+    overflow: hidden;
   
     @include mobile {
       bottom: 0;

@@ -84,13 +84,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	/* ------------------------------------- */
 	// ヘッダースクロール
 	/* ------------------------------------- */
+	// #headerと.header__logoが10スクロールされたらis-scrolledクラスを付ける
+	// if (header) →→万が一その要素がないページでもエラーが出ないように
+	// classList.toggle('クラス名', 条件) と書くことで、「条件が true なら追加、false なら削除」
 
 	window.addEventListener('scroll', () => {
 		const header = document.getElementById('header');
-		if (window.scrollY > 10) {
-			header.classList.add('is-scrolled');
-		} else {
-			header.classList.remove('is-scrolled');
+		const headerLogo = document.querySelector('.header__logo');
+
+		const isScrolled = window.scrollY > 10;
+
+		if (header) {
+			header.classList.toggle('is-scrolled', isScrolled);
+		}
+
+		if (headerLogo) {
+			headerLogo.classList.toggle('is-scrolled', isScrolled);
 		}
 	});
 	/* ------------------------------------- */
