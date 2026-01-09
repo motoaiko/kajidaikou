@@ -39,7 +39,6 @@
   --color-footer: #4E7A28;
   /* Shadow */
   --shadow: 0 2px 4px rgba(0, 0, 0, .3);
-  --main-font:16px;
 }
 
 /* =========================
@@ -55,9 +54,13 @@
 /* ----------------- */
 /* 共通設定*/
 /* ----------------- */
+/* 16px × 62.5% = 10px に設定→→14px＝1.4remと表記 */
+html {
+  font-size: 62.5%;
+}
+
 body {
   overflow-x: hidden;
-  font-size: var(--main-font);
   font-family: "Noto Sans JP", sans-serif;
   color: var(--color-text-main);
   line-height: 1.6;
@@ -66,10 +69,11 @@ body {
   background-color: var(--color-bg-base);
   background-repeat: no-repeat;
   text-align: center;
+  font-size: 1.6rem;
 }
 @media (max-width: 800px) {
   body {
-    font-size: 14px;
+    font-size: 1.4rem;
     text-align: justify;
   }
 }
@@ -108,7 +112,7 @@ a:hover {
 }
 
 .heading {
-  font-size: 32px;
+  font-size: 3.2rem;
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 700;
   line-height: 1.4;
@@ -119,8 +123,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .heading {
-    font-size: 18px;
-    text-align: center;
+    font-size: 1.8rem;
   }
 }
 
@@ -139,7 +142,8 @@ a:hover {
 }
 @media (max-width: 800px) {
   .common__title--em {
-    font-size: 24px;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
   }
 }
 .common__title--em::after {
@@ -154,37 +158,38 @@ a:hover {
 }
 @media (max-width: 800px) {
   .common__title--em::after {
-    display: none;
+    width: 150px;
+    top: 90%;
   }
 }
 .common__label {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.8rem;
   margin-bottom: 16px;
   border-bottom: 1px dashed #ccc;
   padding-bottom: 12px;
 }
 @media (max-width: 800px) {
   .common__label {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 .common__subtitle--em {
   color: var(--color-secondary);
   display: inline-block;
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
 }
 @media (max-width: 800px) {
   .common__subtitle--em {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 }
 .common__title--en {
   display: block;
   font-family: "Quicksand", sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   letter-spacing: 0.08em;
   color: var(--color-accent);
   margin-bottom: 8px;
@@ -192,7 +197,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .common__title--en {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 }
 
@@ -330,7 +335,7 @@ a:hover {
 @media (max-width: 1024px) {
   .header__item a {
     color: #fff;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-align: center;
   }
   .header__item a:hover {
@@ -360,12 +365,12 @@ a:hover {
   .header__item--cta {
     display: block;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 }
 .header__cta {
   color: #fff !important;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 .header__cta:hover {
   opacity: 1;
@@ -412,7 +417,7 @@ a:hover {
     width: 56px;
     height: 56px;
     border-radius: 40%;
-    background-color: var(--color-btn);
+    background-color: var(--color-secondary);
     z-index: 10000;
     right: 5%;
     top: 50%;
@@ -549,7 +554,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .fv__title {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 .fv__title--em {
@@ -563,7 +568,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .fv__title--em {
-    font-size: 32px;
+    font-size: 3.2rem;
     text-underline-offset: 8px;
   }
 }
@@ -574,7 +579,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .fv__subtitle {
-    font-size: 16px;
+    font-size: 1.6rem;
     text-align: center;
     margin-top: 24px;
   }
@@ -588,7 +593,7 @@ a:hover {
 @media (max-width: 800px) {
   .fv__cta {
     padding: 8px 24px;
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 .fv__cta:hover {
@@ -777,27 +782,28 @@ a:hover {
   position: relative;
   font-family: "M PLUS Rounded 1c", sans-serif;
   background: rgba(255, 255, 255, 0.9);
-  padding: 60px;
+  padding: 60px 80px;
   border-radius: 50px;
   box-shadow: var(--shadow);
-  font-size: 24px;
+  font-size: 2.4rem;
   /* 黄色い吹き出し画像 */
 }
 @media (max-width: 800px) {
   .photo__text {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin: 0 24px;
     padding: 40px;
+    text-align: center;
   }
 }
 .photo__text::before {
   content: "";
   position: absolute;
   width: 180px;
-  height: 130px;
+  height: 120px;
   background: url(../img/hukidasi.png) no-repeat center/contain;
-  bottom: 70%;
-  left: -22%;
+  bottom: 75%;
+  left: -16%;
   z-index: 1;
   transform: rotate(-12deg);
 }
@@ -810,14 +816,42 @@ a:hover {
     transform: translateX(-50%);
   }
 }
-.photo__text--em {
-  font-size: 48px;
-  letter-spacing: 0.08em;
-  text-shadow: var(--shadow);
+.photo__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #4a6741;
+}
+@media (max-width: 480px) {
+  .photo__title {
+    font-size: 1.1rem;
+  }
+}
+.photo__sub {
+  margin-bottom: 1.2em;
+  display: block;
+}
+.photo__offer {
+  font-weight: bold;
+}
+.photo__price {
+  color: #b22222;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.photo__price::after {
+  content: "";
+  width: 230px;
+  height: 20px;
+  background-image: url(../img/line-removebg-preview.png);
+  position: absolute;
+  top: 90%;
+  left: 0px;
 }
 @media (max-width: 800px) {
-  .photo__text--em {
-    font-size: 28px;
+  .photo__price::after {
+    width: 150px;
   }
 }
 
@@ -839,9 +873,6 @@ a:hover {
 .solution__title-area {
   padding: 32px 24px;
 }
-.solution__title {
-  margin-bottom: 40px;
-}
 @media (max-width: 800px) {
   .solution__title {
     margin-bottom: 24px;
@@ -858,14 +889,12 @@ a:hover {
   }
 }
 .solution__lead {
-  font-size: 18px;
   line-height: 1.8;
   margin-bottom: 80px;
-  color: #4a4a4a;
 }
 @media (max-width: 800px) {
   .solution__lead {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin-bottom: 60px;
   }
 }
@@ -909,6 +938,14 @@ a:hover {
 }
 .solution__text {
   letter-spacing: 0.01em;
+}
+
+/* 「60分プランのみ20％OFF」を強調 */
+.solution__lead span {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #d32f2f;
+  text-decoration: underline;
 }
 
 /* -----------------------------------------*/
@@ -1000,7 +1037,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .service-plan__title {
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: 12px;
   }
 }
@@ -1012,7 +1049,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .service-plan__time {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 }
 .service-plan__price {
@@ -1050,7 +1087,7 @@ a:hover {
   color: #fff;
   padding: 4px 16px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
@@ -1078,7 +1115,7 @@ a:hover {
 
 .service-plan__note {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #5A8F2C;
   font-weight: 700;
 }
@@ -1121,13 +1158,18 @@ a:hover {
   left: 0;
   width: 240px;
 }
+@media (max-width: 800px) {
+  .voice__title--em::after {
+    width: 150px;
+  }
+}
 .voice__container {
   width: 50%;
   margin: 0 auto 60px;
 }
 @media (max-width: 1024px) {
   .voice__container {
-    width: 80%;
+    width: 90%;
   }
 }
 .voice__content {
@@ -1139,7 +1181,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .voice__content {
-    padding: 24px;
+    padding: 2.4rem;
   }
 }
 .voice__content--top {
@@ -1182,7 +1224,7 @@ a:hover {
 @media (max-width: 800px) {
   .voice__img-area {
     margin: 0 auto;
-    width: 70%;
+    width: 50%;
   }
 }
 .voice__img {
@@ -1198,7 +1240,7 @@ a:hover {
   margin-top: 8px;
 }
 .voice__img-text p {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: var(--color-text-sub);
   line-height: 1.4;
 }
@@ -1207,7 +1249,7 @@ a:hover {
   text-align: justify;
 }
 .voice__subtitle p {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-text-main);
   margin-bottom: 16px;
@@ -1216,18 +1258,17 @@ a:hover {
 }
 @media (max-width: 800px) {
   .voice__subtitle p {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 .voice__text p {
   margin-bottom: 12px;
-  line-height: 1.7;
   color: var(--color-text-sub);
   font-size: 15px;
 }
 @media (max-width: 800px) {
   .voice__text p {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 .voice__cta {
@@ -1409,6 +1450,11 @@ a:hover {
 .faq__title--em::after {
   width: 330px;
 }
+@media (max-width: 800px) {
+  .faq__title--em::after {
+    width: 200px;
+  }
+}
 .faq__wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -1441,7 +1487,7 @@ a:hover {
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
+  font-size: 2.4rem;
   color: var(--color-accent);
   transition: transform 0.3s ease;
 }

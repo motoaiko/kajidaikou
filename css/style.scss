@@ -3,9 +3,13 @@
 /* ----------------- */
 /* 共通設定*/
 /* ----------------- */
-body {
+/* 16px × 62.5% = 10px に設定→→14px＝1.4remと表記 */
+html{
+  font-size:62.5%;
+}
+
+body{
   overflow-x: hidden;
-  font-size:var(--main-font);
   font-family: $font-main;
   color: var(--color-text-main);
   line-height: 1.6;
@@ -14,9 +18,10 @@ body {
   background-color: var(--color-bg-base);
   background-repeat: no-repeat;
   text-align: center;
+  font-size: 1.6rem;
   
   @include mobile {
-    font-size: 14px;
+    font-size:1.4rem;
     text-align: justify;
 }
 }
@@ -53,7 +58,7 @@ a {
 }
 
 .heading{
-  font-size: 32px;
+  font-size: 3.2rem;
   font-family: $font-accent; 
   font-weight: 700; 
   line-height: 1.4;
@@ -62,12 +67,8 @@ a {
   margin-bottom: 120px;
   text-align: center;
 
-  
-
   @include mobile {
-    font-size: 18px;
-    text-align: center;
-    
+    font-size: 1.8rem; 
   }
 }
 /* -----------------------------------------*/
@@ -82,7 +83,8 @@ a {
     padding: 0 8px;
 
     @include mobile {
-      font-size: 24px;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
     }
 
     &::after {
@@ -96,30 +98,31 @@ a {
       left: 0px;
 
       @include mobile{
-        display: none;
+        width: 150px;
+        top: 90%;
       }
     }
   }
   &__label{
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: 16px;
     border-bottom: 1px dashed #ccc;
     padding-bottom: 12px;
 
     @include mobile {
-      font-size: 14px;
+      font-size:1.4rem;
     }
   }
   &__subtitle--em{
     color: var(--color-secondary);
     display: inline-block;
-    font-size: 32px;
+    font-size: 3.2rem;
     font-weight: 700;
     font-family: $font-en;
 
     @include mobile{
-      font-size: 24px;
+      font-size: 2.4rem;
     }
   }
 
@@ -127,14 +130,14 @@ a {
   &__title--en {
     display: block;
     font-family: "Quicksand", sans-serif;
-    font-size: 24px;
+    font-size: 2.4rem;
     letter-spacing: 0.08em;
     color: var(--color-accent);
     margin-bottom: 8px;
     opacity: 0.8;
   
     @include mobile {
-      font-size: 16px;
+      font-size: 1.6rem;
     }
   }
   
@@ -165,6 +168,7 @@ a {
   z-index: 100;
   background: var(--color-bg-base);
   transition: background 0.3s ease;
+
 
   &.is-scrolled { 
     background: rgba(255, 255, 255, 0.5); 
@@ -280,7 +284,7 @@ a {
 
       @include tablet {
         color: #fff;
-        font-size:16px;
+        font-size:1.6rem;
         text-align: center;
 
         &:hover {
@@ -321,13 +325,13 @@ a {
     @include tablet {
       display: block;
       text-align: center;
-      font-size:16px;
+      font-size:1.6rem;
 
     }
   }
   &__cta{
     color: #fff !important;
-    font-size: 16px;
+    font-size: 1.6rem;
 
     &:hover {
       opacity: 1;
@@ -375,7 +379,7 @@ a {
     width: 56px;
     height: 56px;
     border-radius: 40%;
-    background-color: var(--color-btn);
+    background-color: var(--color-secondary);
     z-index: 10000;
     right: 5%;
     top: 50%;
@@ -526,7 +530,7 @@ body.open {
     margin-bottom:40px;
 
     @include mobile {
-      font-size:18px;
+      font-size:1.8rem;
     }
   }
 
@@ -540,7 +544,7 @@ body.open {
     text-underline-offset:16px; 
 
     @include mobile {
-      font-size:32px;
+      font-size:3.2rem;
       text-underline-offset: 8px;
     }
   }
@@ -553,7 +557,7 @@ body.open {
     margin-bottom:32px;
 
     @include mobile {
-      font-size: 16px;
+      font-size: 1.6rem;
       text-align: center;
       margin-top: 24px;
     }
@@ -568,7 +572,7 @@ body.open {
 
     @include mobile {
       padding: 8px 24px;
-      font-size: 14px;
+      font-size:1.4rem;
     }
 
     &:hover {
@@ -757,22 +761,22 @@ body.open {
   @include mobile {
     padding: 80px 0;
     margin-bottom: 80px;
-
   }
 
   &__text {
     position: relative;
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: rgba(255, 255, 255, 0.9);
-    padding: 60px;
+    padding: 60px 80px;
     border-radius: 50px;
     box-shadow: var(--shadow);
-    font-size: 24px;
+    font-size: 2.4rem;
 
   @include mobile {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin: 0 24px;
     padding: 40px;
+    text-align: center;
   }
   
   /* 黄色い吹き出し画像 */
@@ -780,10 +784,10 @@ body.open {
     content: "";
     position: absolute;
     width: 180px;
-    height: 130px;
+    height: 120px;
     background: url(../img/hukidasi.png) no-repeat center / contain;
-    bottom: 70%;
-    left: -22%;
+    bottom: 75%;
+    left: -16%;
     z-index: 1;
     transform: rotate(-12deg);
 
@@ -798,17 +802,53 @@ body.open {
 
   }
 
-  &__text--em{
-    font-size: 48px;
-    letter-spacing: 0.08em;
-    text-shadow: var(--shadow);
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #4a6741; // ロゴに合わせた深緑
 
-    @include mobile {
-      font-size: 28px;
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
     }
   }
 
+  &__sub {
+    margin-bottom: 1.2em;
+    display: block;
+  }
+
+  &__offer {
+    font-weight: bold;
+  }
+
+    &__price {
+      color: #b22222; 
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+
+      // マーカー風の下線
+      &::after {
+        content: ""; 
+        width: 230px;
+        height: 20px;
+        background-image: url(../img/line-removebg-preview.png);
+        position: absolute;
+        top: 90%;
+        left: 0px;
+
+        @include mobile{
+          width: 150px;
+        }
+      }
+    }
+
+
 }
+
+
+
 
 /* -----------------------------------------*/
 /* h2　サービス内容について */
@@ -827,7 +867,6 @@ body.open {
   }
   /* ｈ2 */
   &__title {
-    margin-bottom: 40px;
 
     @include mobile {
       margin-bottom: 24px;
@@ -848,18 +887,20 @@ body.open {
   }
 
   /* リード文 */
+  
   &__lead {
-    font-size: 18px;
     line-height: 1.8;
     margin-bottom: 80px;
-    color: #4a4a4a;
 
     @include mobile {
-      font-size: 16px;
+      font-size: 1.6rem;
       margin-bottom: 60px;
     }
   }
 
+
+
+  
   /* サービス内容について */
   &__cards {
     display: flex;
@@ -904,6 +945,20 @@ body.open {
     letter-spacing: 0.01em;
   }
 }
+
+/* 「60分プランのみ20％OFF」を強調 */
+.solution__lead span {
+    font-weight: bold;
+    font-size: 1.2em; 
+    color: #d32f2f; 
+    text-decoration: underline;
+  
+}
+
+
+
+
+
 /* -----------------------------------------*/
 /* サービス内容・料金セクション */
 /* -----------------------------------------*/
@@ -946,7 +1001,7 @@ body.open {
       gap: 24px;
       justify-items: center;
       max-width: 1200px;
-    margin: 0 auto;
+      margin: 0 auto;
   
       @include tablet {
         grid-template-columns: repeat(2, 1fr);
@@ -988,7 +1043,7 @@ body.open {
     color: #333;
 
     @include mobile {
-      font-size: 18px;
+      font-size: 1.8rem;
       margin-bottom: 12px;
     }
   }
@@ -1000,7 +1055,7 @@ body.open {
     color: #333;
 
     @include mobile {
-      font-size: 24px;
+      font-size: 2.4rem;
     }
   }
 
@@ -1039,7 +1094,7 @@ body.open {
       color: #fff;
       padding: 4px 16px;
       border-radius: 20px;
-      font-size: 14px;
+      font-size:1.4rem;
       font-weight: 700;
   }
 }
@@ -1070,7 +1125,7 @@ body.open {
 
 .service-plan__note {
   margin-top: 8px;
-  font-size: 14px;
+  font-size:1.4rem;
   color: #5A8F2C;
   font-weight: 700;
 }
@@ -1107,6 +1162,10 @@ body.open {
     top: 100%;
     left: 0;
     width: 240px;
+
+    @include mobile{
+      width: 150px;
+    }
   }
 
   &__container{
@@ -1114,7 +1173,7 @@ body.open {
     margin: 0 auto 60px;
 
     @include tablet{
-      width: 80%;
+      width: 90%;
     }
     }
 
@@ -1126,7 +1185,7 @@ body.open {
     margin-bottom: 40px;
 
     @include mobile {
-      padding: 24px;
+      padding: 2.4rem;
     }
   }
 
@@ -1172,7 +1231,7 @@ body.open {
 
     @include mobile {
       margin: 0 auto;
-      width: 70%;
+      width: 50%;
     }
   }
 
@@ -1190,7 +1249,7 @@ body.open {
     margin-top: 8px;
 
     p {
-      font-size: 14px;
+      font-size:1.4rem;
       color: var(--color-text-sub);
       line-height: 1.4;
     }
@@ -1204,7 +1263,7 @@ body.open {
 
   &__subtitle {
     p {
-      font-size: 16px;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--color-text-main);
       margin-bottom: 16px;
@@ -1212,7 +1271,7 @@ body.open {
       padding-bottom: 16px;
 
       @include mobile {
-        font-size: 14px;
+        font-size:1.4rem;
       }
     }
   }
@@ -1220,12 +1279,11 @@ body.open {
   &__text {
     p {
       margin-bottom: 12px;
-      line-height: 1.7;
       color: var(--color-text-sub);
       font-size: 15px;
 
       @include mobile {
-        font-size: 14px;
+        font-size:1.4rem;
       }
     }
   }
@@ -1435,7 +1493,13 @@ body.open {
   &__title--em{
     &::after{
       width: 330px;
+
+      @include mobile{
+        width: 200px;
+      }
+  
     }
+
   }
 
   &__wrapper {
@@ -1462,7 +1526,7 @@ body.open {
   }
 
   &__question {
-    list-style: none; // デフォルトの矢印を消す（Chromeなど）
+    list-style: none; // デフォルトの矢印を消す
     padding: 24px 60px 24px 24px;
     font-weight: 700;
     position: relative;
@@ -1475,8 +1539,8 @@ body.open {
       right: 24px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 24px;
-      color: var(--color-accent); // アクセントカラー
+      font-size: 2.4rem;
+      color: var(--color-accent); 
       transition: transform 0.3s ease;
     }
     
@@ -1487,6 +1551,5 @@ body.open {
     line-height: 1.8;
     border-top: 1px solid #f9f9f9;
     text-align: justify;
-    
   }
 }
