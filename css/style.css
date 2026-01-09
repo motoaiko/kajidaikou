@@ -885,7 +885,7 @@ a:hover {
 }
 @media (max-width: 800px) {
   .solution__title--em::after {
-    display: none;
+    width: 220px;
   }
 }
 .solution__lead {
@@ -972,7 +972,8 @@ a:hover {
 }
 @media (max-width: 800px) {
   .service-options__title {
-    font-size: 20px;
+    font-size: 2rem;
+    padding-bottom: 8px;
   }
 }
 
@@ -1009,6 +1010,7 @@ a:hover {
 
 .service-plan {
   width: 70%;
+  max-width: 300px;
   background: #fff;
   border-radius: 20px;
   padding: 32px 24px;
@@ -1126,7 +1128,7 @@ a:hover {
 .voice {
   padding: 80px 16px;
   margin-bottom: 240px;
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/voicebg.webp) no-repeat left 10px top 0px/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/voicebg.webp) no-repeat left 0px top 0px/cover;
   background-blend-mode: multiply;
   /* 上段：画像＋テキスト */
   /* 下段：プラン名など */
@@ -1224,17 +1226,12 @@ a:hover {
 @media (max-width: 800px) {
   .voice__img-area {
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
   }
 }
 .voice__img {
-  width: 80%;
+  width: 100px;
   margin: 0 auto 24px;
-}
-.voice__img img {
-  width: 100%;
-  border-radius: 12px;
-  display: block;
 }
 .voice__img-text {
   margin-top: 8px;
@@ -1290,6 +1287,12 @@ a:hover {
   box-shadow: var(--shadow);
   letter-spacing: 0.1em;
 }
+@media (max-width: 800px) {
+  .voice__cta-btn {
+    width: 170px;
+    padding: 16px 32px;
+  }
+}
 .voice__cta-btn::before, .voice__cta-btn::after {
   position: absolute;
   content: "";
@@ -1297,6 +1300,11 @@ a:hover {
   height: 30px;
   background-color: white;
   top: 50%;
+}
+@media (max-width: 800px) {
+  .voice__cta-btn::before, .voice__cta-btn::after {
+    display: none;
+  }
 }
 .voice__cta-btn::before {
   transform: translateY(-50%) rotate(-40deg);

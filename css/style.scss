@@ -881,7 +881,7 @@ body.open {
       width: 370px;
 
       @include mobile {
-        display: none;
+        width: 220px;
       }
     }
   }
@@ -980,7 +980,8 @@ body.open {
     margin: 0 auto 64px;
 
     @include mobile {
-      font-size: 20px;
+      font-size: 2rem;
+      padding-bottom: 8px;
     }
   }
 }
@@ -1017,6 +1018,7 @@ body.open {
 
 .service-plan {
   width: 70%;
+  max-width: 300px;
   background: #fff;
   border-radius: 20px;
   padding: 32px 24px;
@@ -1138,7 +1140,7 @@ body.open {
   padding: 80px 16px;
   margin-bottom: 240px;
   // 背景明度を20％にして文字を読みやすく
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/voicebg.webp) no-repeat left 10px top 0px / cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/voicebg.webp) no-repeat left 0px top 0px / cover;
   background-blend-mode: multiply;
 
   @include mobile{
@@ -1231,18 +1233,13 @@ body.open {
 
     @include mobile {
       margin: 0 auto;
-      width: 50%;
+      width: 100%;
     }
   }
 
   &__img {
-    width: 80%;
+    width: 100px;
     margin: 0 auto 24px;
-    img {
-      width: 100%;
-      border-radius: 12px;
-      display: block;
-    }
   }
 
   &__img-text {
@@ -1312,6 +1309,10 @@ body.open {
     border-radius: 50px;
     box-shadow: var(--shadow);
     letter-spacing: 0.1em;
+    
+    @include mobile{
+      width: 170px;
+      padding: 16px 32px;    }
 
     //左右の装飾
     &::before,
@@ -1322,6 +1323,10 @@ body.open {
       height: 30px;
       background-color: white;
       top: 50%;
+
+      @include mobile{
+        display: none;
+      }
     }
     &::before{
       transform: translateY(-50%)rotate(-40deg);
