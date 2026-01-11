@@ -1479,11 +1479,16 @@ body.open {
 
   &__price{
     position: relative;
+    display: inline-block;
+
     &::after{
-      content: "●";
-      position: absolute;
-      width: 20px;
-      height: 20px;
+    content: "▲";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -24px;
+    top: 3px;
+    color: var(--color-btn-hover);
       
 
     }

@@ -1439,12 +1439,16 @@ a:hover {
 }
 .cta-final__price {
   position: relative;
+  display: inline-block;
 }
 .cta-final__price::after {
-  content: "●";
+  content: "▲";
   position: absolute;
   width: 20px;
   height: 20px;
+  right: -24px;
+  top: 3px;
+  color: var(--color-btn-hover);
 }
 
 .banner {
