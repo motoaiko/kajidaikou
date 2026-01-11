@@ -1449,7 +1449,7 @@ body.open {
 .cta-final {
   position: relative;
 
-  &__title--em::after{
+  &__title--em ::after{
     width: 270px;
   }
 }

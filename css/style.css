@@ -1412,7 +1412,7 @@ a:hover {
 .cta-final {
   position: relative;
 }
-.cta-final__title--em::after {
+.cta-final__title--em ::after {
   width: 270px;
 }
 
