@@ -1,21 +1,78 @@
 /* ------------------------------------- */
-/* ------------------------------------- */
 // バニラJS
 /* ------------------------------------- */
-/* ------------------------------------- */
 
-
-/* ------------------------------------- */
-// ハンバーガーメニュー 
-/* ------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
+	/* --- 要素の取得 --- */
+	const header = document.getElementById('header');
+	const headerLogo = document.querySelector('.header__logo');
+	const pageTopBtn = document.getElementById('page-top');
+	const banner = document.getElementById('banner');
+	const stopMarker = document.getElementById('banner-stop'); // 止まる場所の箱
+
+	/* ------------------------------------- */
+	// スクロール連動イベント（ヘッダー・ボタン・バナー）
+	/* ------------------------------------- */
+	window.addEventListener('scroll', function () {
+		const scrollY = window.scrollY;
+		const windowHeight = window.innerHeight;
+		const headerH = header ? header.offsetHeight : 100;
+
+		// A. ヘッダーの背景（10px以上で変化）
+		const isScrolled = scrollY > 10;
+		if (header) header.classList.toggle('is-scrolled', isScrolled);
+		if (headerLogo) headerLogo.classList.toggle('is-scrolled', isScrolled);
+
+		// B. ボタンとバナーの表示・非表示
+		// ヘッダー高さを超えたら表示
+		if (scrollY > headerH) {
+			if (pageTopBtn) pageTopBtn.classList.add('show');
+			if (banner) banner.classList.add('show');
+		} else {
+			if (pageTopBtn) pageTopBtn.classList.remove('show');
+			if (banner) banner.classList.remove('show');
+		}
+
+		// C. バナーの固定位置の切り替え
+		if (banner && stopMarker) {
+			const markerRect = stopMarker.getBoundingClientRect();
+			const markerTop = markerRect.top + scrollY; // 止まる場所の開始位置
+
+			// 画面の下端（余白20px考慮）がマーカーに到達したら
+			if (scrollY + windowHeight - 20 > markerTop) {
+				// 定位置（マーカーの中）に留める
+				banner.style.position = 'absolute';
+				banner.style.bottom = '0px';
+			} else {
+				// それまでは画面下（fixed）に追いかけてくる
+				banner.style.position = 'fixed';
+				banner.style.bottom = '0px';
+			}
+		}
+	});
+
+	/* ------------------------------------- */
+	// ページトップへ戻るクリックイベント
+	/* ------------------------------------- */
+	if (pageTopBtn) {
+		pageTopBtn.addEventListener('click', function (e) {
+			e.preventDefault();
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth',
+			});
+		});
+	}
+	/* ------------------------------------- */
+	// ハンバーガーメニュー
+	/* ------------------------------------- */
+
 	const hamburger = document.getElementById('hamburger');
 	const body = document.body;
 	const menuText = document.querySelector('#hamburger .menu-text');
 	const navLinks = document.querySelectorAll('.header__nav a');
 
-	// メニューテキスト
-
+	// メニューテキスト切り替え
 	function updateMenuText() {
 		if (body.classList.contains('open')) {
 			menuText.textContent = 'close';
@@ -40,91 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	/* ------------------------------------- */
-	// トップへ戻るボタン
-	/* ------------------------------------- */
-
-	const pageTopBtn = document.getElementById('page-top');
-	//header の高さを取得
-	const header = document.getElementById('header');
-	const headerHeight = header.offsetHeight;
-	const Banner = document.getElementById('banner');
-
-	window.addEventListener('scroll', function () {
-		const scrollY = window.scrollY;
-
-		if (scrollY > headerHeight) {
-			pageTopBtn.classList.add('show');
-		} else {
-			pageTopBtn.classList.remove('show');
-		}
-
-		if (scrollY > headerHeight) {
-			Banner.classList.add('show');
-		} else {
-			Banner.classList.remove('show');
-		}
-
-	});
-
-	pageTopBtn.addEventListener('click', function (e) {
-		e.preventDefault(); // デフォルトのリンク動作を防止
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		});
-	});
-	/* ------------------------------------- */
-	// バナー表示　下部固定
-	/* ------------------------------------- */
-	const banner = document.getElementById('banner');
-	const ctaSection = document.querySelector('.cta-final');
-
-	window.addEventListener('scroll', function () {
-		const scrollY = window.scrollY;
-		const ctaTop = ctaSection.getBoundingClientRect().top + window.pageYOffset;
-		const windowHeight = window.innerHeight;
-
-		// 1. 表示・非表示の切り替え（ヘッダー付近）
-		if (scrollY > 200) {
-			banner.classList.add('show');
-		} else {
-			banner.classList.remove('show');
-		}
-
-		// 2. 固定(fixed)か、セクションでの静止(absolute)かの切り替え
-		// 画面の下端が cta-final セクションに到達したら
-		if (scrollY + windowHeight > ctaTop + 100) {
-			banner.style.position = 'absolute';
-			banner.style.bottom = '-150px'; // cta-finalの底に張り付く
-		} else {
-			banner.style.position = 'fixed';
-			banner.style.bottom = '0px'; // 画面下に浮く
-		}
-	});
-
-
-	/* ------------------------------------- */
-	// ヘッダースクロール
-	/* ------------------------------------- */
-	// #headerと.header__logoが10スクロールされたらis-scrolledクラスを付ける
-	// if (header) →→万が一その要素がないページでもエラーが出ないように
-	// classList.toggle('クラス名', 条件) と書くことで、「条件が true なら追加、false なら削除」
-
-	window.addEventListener('scroll', () => {
-		const header = document.getElementById('header');
-		const headerLogo = document.querySelector('.header__logo');
-
-		const isScrolled = window.scrollY > 10;
-
-		if (header) {
-			header.classList.toggle('is-scrolled', isScrolled);
-		}
-
-		if (headerLogo) {
-			headerLogo.classList.toggle('is-scrolled', isScrolled);
-		}
-	});
 	/* ------------------------------------- */
 	// フッター年号自動更新
 	/* ------------------------------------- */
@@ -183,11 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
-	// ↓全てのJSの閉じカッコ
-});
+});// 全てのJSの閉じカッコ
 
-document.addEventListener('DOMContentLoaded', () => {
-});
+
 /* ------------------------------------- */
 // フェードアップ
 /* ------------------------------------- */

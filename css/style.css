@@ -693,7 +693,8 @@ a:hover {
   background: #fff;
   transform: rotate(45deg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
+          clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 .problem__bubble--top-left {
   top: -40px;
@@ -702,7 +703,8 @@ a:hover {
 .problem__bubble--top-left::after {
   bottom: 10px;
   right: 0px;
-  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+          clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-left::after {
@@ -716,7 +718,8 @@ a:hover {
 .problem__bubble--top-right::after {
   bottom: 5px;
   left: 24px;
-  clip-path: polygon(100% 0, 0 30%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 30%, 100% 100%);
+          clip-path: polygon(100% 0, 0 30%, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-right::after {
@@ -730,7 +733,8 @@ a:hover {
 .problem__bubble--bottom-left::after {
   top: 8px;
   right: 0px;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-left::after {
@@ -745,7 +749,8 @@ a:hover {
   top: -4px;
   left: 20px;
   transform: rotate(-45deg);
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-right::after {
@@ -959,6 +964,7 @@ a:hover {
   margin-bottom: 64px;
   border-bottom: 2px solid var(--color-accent);
   font-family: "M PLUS Rounded 1c", sans-serif;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -1392,7 +1398,8 @@ a:hover {
 .faq__cta {
   margin-top: 32px;
   text-align: right;
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 @media (max-width: 800px) {
   .faq__cta {
@@ -1412,6 +1419,9 @@ a:hover {
 .cta-final {
   position: relative;
 }
+.cta-final__title {
+  margin-bottom: 80px;
+}
 .cta-final__title--em::after {
   width: 450px;
 }
@@ -1421,32 +1431,33 @@ a:hover {
   }
 }
 
-/* バナーが動けるレールの役割 */
-.banner__sticky-wrapper {
+.banner__stop-marker {
   position: relative;
   width: 100%;
-  margin-top: 40px;
+  height: 100px;
+}
+@media (max-width: 800px) {
+  .banner__stop-marker {
+    height: 80px;
+  }
 }
 
 /* ------------------------------------- */
 /* banner 本体 */
 /* ------------------------------------- */
 .banner {
-  position: sticky;
-  bottom: 20px;
-  z-index: 100;
-  width: 100%;
   left: 0;
+  width: 100%;
+  z-index: 100;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
+  /* アニメーション設定 */
   opacity: 0;
   visibility: hidden;
   transform: translateY(50px);
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, bottom 0.1s ease;
   pointer-events: none;
-  /* 表示時（JSで制御） */
-  /* リンクエリア */
 }
 .banner.show {
   opacity: 1;
@@ -1455,13 +1466,18 @@ a:hover {
   pointer-events: auto;
 }
 .banner__link {
+  display: block;
   max-width: 500px;
   margin: 0 auto;
   padding: 6px 0;
 }
+.banner__link img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 @media (max-width: 800px) {
   .banner__link {
-    display: block;
     max-width: 400px;
     width: 90%;
   }
@@ -1559,4 +1575,5 @@ a:hover {
 .arrow::after {
   right: 0;
   transform: rotate(-45deg);
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

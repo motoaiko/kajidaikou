@@ -1449,48 +1449,48 @@ body.open {
 .cta-final {
   position: relative;
 
+  &__title{
+    margin-bottom: 80px;
+  }
+
   &__title--em {
     &::after {
       width: 450px;
+
       @include mobile{
         width: 270px;
-
       }
     }  
   }
 }
 
-/* バナーが動けるレールの役割 */
-.banner__sticky-wrapper {
+.banner__stop-marker {
   position: relative;
   width: 100%;
-  margin-top: 40px; 
+  height: 100px; 
+
+  @include mobile {
+    height: 80px;
+  }
 }
 
 /* ------------------------------------- */
 /* banner 本体 */
 /* ------------------------------------- */
 .banner {
-  // 1. 基本配置（stickyでレール内を動く）
-  position: sticky;
-  bottom: 20px; // 画面下からの固定位置
-  z-index: 100;
-  
-  // 2. 見た目の設定
+  left: 0;
   width: 100%;
-  left: 0; // stickyの基準
+  z-index: 100;
   backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
 
-  // 3. 非表示状態（JSで.showがつく前）
+  /* アニメーション設定 */
   opacity: 0;
   visibility: hidden;
-  // 画面中央下側に隠しておく
   transform: translateY(50px); 
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, bottom 0.1s ease; 
   pointer-events: none;
 
-  /* 表示時（JSで制御） */
   &.show {
     opacity: 1;
     visibility: visible;
@@ -1498,19 +1498,24 @@ body.open {
     pointer-events: auto;
   }
 
-  /* リンクエリア */
   &__link {
+    display: block; // 追加
     max-width: 500px;
     margin: 0 auto;
     padding: 6px 0;
 
+    img {
+      width: 100%; // 追加
+      height: auto;
+      display: block;
+    }
+
     @include mobile {
-      display: block; // スマホで表示
       max-width: 400px;
       width: 90%;
     }
-
-  }}
+  }
+}
 
 /* ----------------- */
 /* footer */
@@ -1519,6 +1524,10 @@ body.open {
   background-color: var(--color-footer);
   padding:40px 0;
   margin-top: 240px;
+
+  @include mobile{
+    margin-top: 80px;
+  }
 
   &__text {
     color: #fff;
