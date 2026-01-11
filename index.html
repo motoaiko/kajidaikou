@@ -113,7 +113,7 @@
 				</div>
 			</section>
 			
-			<section class="problem">
+			<section class="problem common__section">
 				<h2 class="problem__title heading">
 					<span class="common__title--en">Daily Housework Stress</span>
 					<span class="problem__title--em common__title--em"> 家事の負担</span>、<br class="mobile">ひとりで抱えていませんか?
@@ -141,7 +141,7 @@
 			</section>
 			
 
-			<section class="solution">
+			<section class="solution common__section">
 
 				<!-- 写真背景エリア -->
 				<div class="photo">
@@ -248,7 +248,7 @@
 
 			</section>
 
-			<section id="voice" class="voice">
+			<section id="voice" class="voice common__section">
 
 				<h2 class="voice__title heading">
 					<span class="voice__title--en common__title--en">Voice</span>
@@ -336,31 +336,72 @@
 				</div>
 			</section>
 
-			<section id="faq" class="faq" >
+			<section id="faq" class="faq common__section" >
+
 				<h2 class="faq__title heading">
 					<span class="faq__title--en common__title--en">Question</span>
 					<span class="faq__title--em common__title--em">よくあるご質問</span>
 				</h2>
 
 				<div class="faq__wrapper">
-					<details class="faq__item">
-					<summary class="faq__question">どんな家事をお願いできますか？</summary>
-					<div class="faq__answer">
+
+					<details class="faq__item js-accordion-title"
+					>
+					<summary class="faq__question">Q. どんな家事をお願いできますか？</summary>
+					<div class="faq__content js-accordion-content">
+						<div class="faq__answer">
 						<p>掃除、洗濯、買い物、お料理など、お客様のご要望に合わせて柔軟に対応いたします。当日の急な追加依頼も、時間内であれば可能ですのでお気軽にご相談ください。</p>
+						</div>
 					</div>
 					</details>
+					<details class="faq__item js-accordion-title"
+					>
+					<summary class="faq__question">Q. 毎回同じスタッフに来てもらえますか？</summary>
+					<div class="faq__content js-accordion-content">
+						<div class="faq__answer">
+						<p>はい。事前にご希望をお伺いし、専任スタッフがお伺いします。ご要望を深く把握し、質の高いサービスを提供いたします。万が一相性が合わない場合は、スタッフ変更も可能です。</p>
+						</div>
+					</div>
+					</details>
+					<details class="faq__item js-accordion-title"
+					>
+					<summary class="faq__question">Q. サービス中に外出しても大丈夫ですか？</summary>
+					<div class="faq__content js-accordion-content">
+						<div class="faq__answer">
+						<p>はい、可能です。鍵をお預かりする「不在時サービス」も承っており、お仕事や外出中に家事を済ませられます。鍵は弊社の規定に基づき厳重に管理いたします。</p>
+						</div>
+					</div>
+					</details>
+
+					<div class="faq__cta">
+						<a href="#" class="faq__cta-btn">その他のよくあるご質問 ＞</a>
+					</div>
+
 				</div>
+		
 			</section>
 
-		<section class="cta-final">
-			<h2 class="cta-final__title">初回割引キャンペーン</h2>
-			<p class="cta-final__text">忙しいあなたの暮らしを軽くします。</p>
-		
-			<a href="#" class="cta-final__btn cta-final__btn--primary">
-				初回割引を申し込む
-			</a>
-			
+			<section class="cta-final common__section">
+
+				<h2 class="cta-final__title heading">
+					<span class="cta-final__title--en common__title--en">Special Offer</span>
+					<span class="cta-final__title--em common__title--em">初回割引キャンペーン</span>
+				</h2>
+
+				<div id="banner" class="banner">
+					<div class="banner__bg"></div>
+					
+					<a href="#" class="banner__link">
+						<picture>
+							<source srcset="img/banner-sp.webp" media="(max-width: 767px)">
+							<img src="img/banner-pc.webp" alt="キャンペーンバナー">
+							</picture>
+						</a>
+				</div>
+	
 			</section>
+
+
 		</main>
 		
 		<!-- page-top btn -->
@@ -370,14 +411,6 @@
 			</a>
 		</div>
 
-		<!-- bannar -->
-		<div id="banner" class="banner">
-			<div class="banner__bg"></div><!-- 背景 -->
-			<a href="#" class="banner__link">
-				<img src="img/banner-pc.webp" alt="#" class="pc">
-				<img src="img/banner-sp.webp" alt="#" class="mobile">
-			</a>	
-		</div>
 		
 		<!-- footer -->
 		<footer class="footer">

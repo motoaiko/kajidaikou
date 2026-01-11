@@ -8,7 +8,7 @@
 /* ------------------------------------- */
 // ハンバーガーメニュー 
 /* ------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
 	const hamburger = document.getElementById('hamburger');
 	const body = document.body;
 	const menuText = document.querySelector('#hamburger .menu-text');
@@ -45,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	/* ------------------------------------- */
 
 	const pageTopBtn = document.getElementById('page-top');
+	//header の高さを取得
 	const header = document.getElementById('header');
 	const headerHeight = header.offsetHeight;
+	const Banner = document.getElementById('banner');
 
 	window.addEventListener('scroll', function () {
 		const scrollY = window.scrollY;
@@ -56,6 +58,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		} else {
 			pageTopBtn.classList.remove('show');
 		}
+
+		if (scrollY > headerHeight) {
+			Banner.classList.add('show');
+		} else {
+			Banner.classList.remove('show');
+		}
+
 	});
 
 	pageTopBtn.addEventListener('click', function (e) {
@@ -68,18 +77,32 @@ document.addEventListener('DOMContentLoaded', function () {
 	/* ------------------------------------- */
 	// バナー表示　下部固定
 	/* ------------------------------------- */
-
-	const Banner = document.getElementById('banner');
+	const banner = document.getElementById('banner');
+	const ctaSection = document.querySelector('.cta-final');
 
 	window.addEventListener('scroll', function () {
 		const scrollY = window.scrollY;
+		const ctaTop = ctaSection.getBoundingClientRect().top + window.pageYOffset;
+		const windowHeight = window.innerHeight;
 
-		if (scrollY > headerHeight) {
-			Banner.classList.add('show');
+		// 1. 表示・非表示の切り替え（ヘッダー付近）
+		if (scrollY > 200) {
+			banner.classList.add('show');
 		} else {
-			Banner.classList.remove('show');
+			banner.classList.remove('show');
+		}
+
+		// 2. 固定(fixed)か、セクションでの静止(absolute)かの切り替え
+		// 画面の下端が cta-final セクションに到達したら
+		if (scrollY + windowHeight > ctaTop + 100) {
+			banner.style.position = 'absolute';
+			banner.style.bottom = '-150px'; // cta-finalの底に張り付く
+		} else {
+			banner.style.position = 'fixed';
+			banner.style.bottom = '0px'; // 画面下に浮く
 		}
 	});
+
 
 	/* ------------------------------------- */
 	// ヘッダースクロール
@@ -109,10 +132,62 @@ document.addEventListener('DOMContentLoaded', function () {
 	// .getFullYear()：そのDateオブジェクトから「年」だけを取り出す
 	document.getElementById('year').textContent = new Date().getFullYear();
 
+	/* ------------------------------------- */
+	// よくある質問のアコーディオンメニュー
+	/* ------------------------------------- */
+
+	const details = document.querySelectorAll('.js-accordion-title');
+
+	details.forEach((item) => {
+		const summary = item.querySelector('.faq__question');
+		const content = item.querySelector('.js-accordion-content');
+
+		summary.addEventListener('click', (e) => {
+			e.preventDefault(); // ブラウザの標準機能をキャンセル
+
+			const isOpen = item.classList.contains('is-open');
+
+			if (!isOpen) {
+				// --- 他の開いているアイテムを閉じる処理 ---
+				details.forEach((otherItem) => {
+					if (otherItem !== item && otherItem.classList.contains('is-open')) {
+						const otherContent = otherItem.querySelector('.js-accordion-content');
+						otherItem.classList.remove('is-open');
+						otherContent.style.height = '0px';
+						// アニメーション完了後にopen属性を削除
+						setTimeout(() => {
+							if (!otherItem.classList.contains('is-open')) otherItem.removeAttribute('open');
+						}, 300);
+					}
+				});
+
+				// --- クリックされたアイテムを開く ---
+				item.setAttribute('open', 'true');
+				item.classList.add('is-open');
+				const height = content.scrollHeight;
+				content.style.height = `${height}px`;
+			} else {
+				// --- クリックされたアイテムを閉じる ---
+				item.classList.remove('is-open');
+				content.style.height = '0px';
+
+				content.addEventListener(
+					'transitionend',
+					() => {
+						if (!item.classList.contains('is-open')) {
+							item.removeAttribute('open');
+						}
+					},
+					{ once: true }
+				);
+			}
+		});
+	});
 	// ↓全てのJSの閉じカッコ
 });
 
-
+document.addEventListener('DOMContentLoaded', () => {
+});
 /* ------------------------------------- */
 // フェードアップ
 /* ------------------------------------- */

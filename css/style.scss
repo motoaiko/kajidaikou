@@ -7,7 +7,6 @@
 html{
   font-size:62.5%;
 }
-
 body{
   overflow-x: hidden;
   font-family: $font-main;
@@ -69,12 +68,21 @@ a {
 
   @include mobile {
     font-size: 1.8rem; 
+    margin-bottom: 40px;
+
   }
 }
 /* -----------------------------------------*/
 /* common */
 /* -----------------------------------------*/
 .common{
+  &__section{
+    margin-bottom: 240px;
+
+    @include mobile{
+      margin-bottom: 80px;
+    }
+  }
   &__title--em{
     position: relative;
     display: inline-block;
@@ -418,7 +426,7 @@ a {
 }
 
 /* -----------------------------------------*/
-/* メニューが開いた時の状態 */
+/* ハンバーガーメニューが開いた時の状態 */
 /* -----------------------------------------*/
 body.open {
   @include tablet {
@@ -610,135 +618,132 @@ body.open {
   @include mobile {
     padding: 80px 16px;
   }
-}
-.problem__title {
-  margin-bottom: 120px;
 
-  @include mobile {
-  margin-bottom: 24px;
-  }
-
-}
-
-.problem__center {
-  position: relative;
-  display: inline-block;
-}
-
-.problem__illust {
-  width: 300px;
-  display: block;
-  background: url(../img/blob.svg) no-repeat center / contain;
-
-  @include mobile {
-    margin: 0 auto;
-    width: 240px;
-  }
-}
-
-/* 吹き出し共通 */
-.problem__bubble {
-  position: absolute;
-  background: #fff;
-  padding: 48px 24px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  width: 200px;
-
-  @include mobile {
-    position: static;
-    margin: 16px auto;
-    width: 90%;
-    padding: 24px 16px;
-    border-radius: 50px;
-  }
-}
-
-// 吹き出し文下線
-.problem__em {
-  display: inline;
-  background: linear-gradient(
-    transparent 60%,
-    rgba(247, 227, 106, 0.6) 60%
-  );
-
-}
-
-
-/* 位置調整（吹き出しの口） */
-.problem__bubble::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: #fff;
-  transform: rotate(45deg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
-}
-
-.problem__bubble--top-left {
-  top: -40px;
-  left: -200px;
-  &::after {
-    bottom: 10px;
-    right: 0px;
-    clip-path: polygon(0 0, 0 100%, 100% 50%);
+  &__title {
+    margin-bottom: 120px;
+  
     @include mobile {
-      display: none;
+    margin-bottom: 24px;
+    }
+  
+  }
+
+  &__center {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__illust {
+    width: 300px;
+    display: block;
+    background: url(../img/blob.svg) no-repeat center / contain;
+  
+    @include mobile {
+      margin: 0 auto;
+      width: 240px;
     }
   }
 
+  /* 吹き出し共通 */
+  &__bubble {
+    position: absolute;
+    background: #fff;
+    padding: 48px 24px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 200px;
 
-}
-
-.problem__bubble--top-right {
-  top: -40px;
-  right: -200px;
-  &::after {
-    bottom: 5px;
-    left: 24px;
-    clip-path: polygon(100% 0, 0 30%, 100% 100%);
     @include mobile {
-      display: none;
+      position: static;
+      margin: 16px auto;
+      width: 90%;
+      padding: 24px 16px;
+      border-radius: 50px;
+    }
+  }
+
+  // 吹き出し文下線
+  &__em {
+    display: inline;
+    background: linear-gradient(
+      transparent 60%,
+      rgba(247, 227, 106, 0.6) 60%
+    );
+  
+  }
+
+  /* 位置調整（吹き出しの口） */
+  &__bubble::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  }
+  
+  &__bubble--top-left {
+    top: -40px;
+    left: -200px;
+    &::after {
+      bottom: 10px;
+      right: 0px;
+      clip-path: polygon(0 0, 0 100%, 100% 50%);
+      @include mobile {
+        display: none;
+      }
+    }
+  
+  
+  }
+  &__bubble--top-right {
+    top: -40px;
+    right: -200px;
+    &::after {
+      bottom: 5px;
+      left: 24px;
+      clip-path: polygon(100% 0, 0 30%, 100% 100%);
+      @include mobile {
+        display: none;
+      }
+
+    }
+  }
+  &__bubble--bottom-left {
+    bottom: -20px;
+    left: -260px;
+    &::after {
+      top: 8px;
+      right: 0px;
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  
+      @include mobile {
+        display: none;
+      }
+  
+    }
+  
+  }
+  &__bubble--bottom-right {
+    bottom: -20px;
+    right: -260px;
+
+    &::after {
+      top: -4px;
+      left: 20px;
+      transform: rotate(-45deg);
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+
+          @include mobile {
+            display: none;
+          }
     }
 
   }
-}
-
-.problem__bubble--bottom-left {
-  bottom: -20px;
-  left: -260px;
-  &::after {
-    top: 8px;
-    right: 0px;
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-
-    @include mobile {
-      display: none;
-    }
-
-  }
 
 }
-
-.problem__bubble--bottom-right {
-  bottom: -20px;
-  right: -260px;
-
-  &::after {
-    top: -4px;
-    left: 20px;
-    transform: rotate(-45deg);
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-
-        @include mobile {
-          display: none;
-        }
-  }
-
-}
-
 
 /* -----------------------------------------*/
 /* solution */
@@ -847,13 +852,9 @@ body.open {
 
 }
 
-
-
-
 /* -----------------------------------------*/
 /* h2　サービス内容について */
 /* -----------------------------------------*/
-
 .solution {
   padding: 0 16px;
   margin-bottom: 240px;
@@ -866,12 +867,6 @@ body.open {
     padding: 32px 24px;
   }
   /* ｈ2 */
-  &__title {
-
-    @include mobile {
-      margin-bottom: 24px;
-    }
-  }
 
   &__title--em {
 
@@ -955,10 +950,6 @@ body.open {
   
 }
 
-
-
-
-
 /* -----------------------------------------*/
 /* サービス内容・料金セクション */
 /* -----------------------------------------*/
@@ -982,6 +973,7 @@ body.open {
     @include mobile {
       font-size: 2rem;
       padding-bottom: 8px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -1135,11 +1127,9 @@ body.open {
 /* =========================
    Voice（お客様の声）
    ========================= */
-
 .voice {
   padding: 80px 16px;
   margin-bottom: 240px;
-  // 背景明度を20％にして文字を読みやすく
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../img/voicebg.webp) no-repeat left 0px top 0px / cover;
   background-blend-mode: multiply;
 
@@ -1148,9 +1138,6 @@ body.open {
   }
 
   &__title {
-    margin-bottom: 120px;
-    text-align: center;
-
     @include mobile {
       margin-bottom: 40px;
     }
@@ -1284,16 +1271,13 @@ body.open {
       }
     }
   }
-  /* ----------------- */
-  /* もっと見るctaボタン */
-  /* ----------------- */
-
+  /* ---------------------------- */
+  /* お客様の声をもっと見るctaボタン */
+  /* ---------------------------- */
   &__cta {
     text-align: center;
     margin-top: 60px;
   }
-
-
 
   &__cta-btn{
     position: relative;
@@ -1302,7 +1286,7 @@ body.open {
     justify-content: center;
     align-items: center;
     width: 240px;
-    padding: 24px 60px;
+    padding: 16px 60px;
     background: var(--color-accent);
     color: #ffffff;
     font-weight: 700;
@@ -1336,17 +1320,210 @@ body.open {
       transform: translateY(-50%)rotate(40deg);
       right: 15%;
     }
-
   }
-
 }
 
 
 
 /* ----------------- */
-/* topへ戻るボタン */
+/* faq */
+/* ----------------- */
+.faq {
+  &__title{
+    margin-bottom: 80px;
+
+    @include mobile{
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title--em{
+    &::after{
+      width: 320px;
+
+      @include mobile{
+        width: 200px;
+      }
+  
+    }
+
+  }
+
+  &__wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+
+
+    @include mobile{
+      padding: 0 16px;
+    }
+  }
+  &__item {
+    margin-bottom:24px ;
+    text-align: justify;
+    background: #fff;
+    overflow: hidden;
+
+    @include mobile{
+      max-width: 400px;
+      margin: 0 auto 16px;
+    }
+    
+
+    // JSで付与するクラスでアイコンを回転
+    &.is-open {
+      .faq__question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+
+  &__question {
+    font-weight: 500;
+    line-height: 1.6;
+    border-bottom: 1px solid #9f9c9c;
+    padding: 8px 24px 8px 32px;
+    position: relative;
+    cursor: pointer;
+    list-style: none;
+
+    @include mobile{
+      padding: 8px 16px;
+    }
+
+
+    &::after {
+      content: "＋";
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.4rem;
+      color: var(--color-accent); 
+      transition: transform 0.3s ease;
+
+      @include mobile{
+        right: 16px;
+      }
+    }
+  }
+
+  // アニメーションの要
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+  }
+
+  &__answer {
+    font-size: 1.4rem;
+    padding: 16px 24px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+  &__cta{
+    margin-top: 32px;
+    text-align: right;
+    text-decoration-line: underline;
+
+    @include mobile{
+      text-align: center;
+    }
+  }
+
+  &__cta-btn{
+    &:hover{
+      transform: none;
+    }
+  }
+}
+
+/* ----------------- */
+/* cta-final */
 /* ----------------- */
 
+/* ------------------------------------- */
+/* cta-final (バナーを止める親要素) */
+/* ------------------------------------- */
+.cta-final {
+  position: relative;
+
+  &__title--em::after{
+    width: 270px;
+  }
+}
+
+/* バナーが動けるレールの役割 */
+.banner__sticky-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 40px; 
+}
+
+/* ------------------------------------- */
+/* banner 本体 */
+/* ------------------------------------- */
+.banner {
+  // 1. 基本配置（stickyでレール内を動く）
+  position: sticky;
+  bottom: 20px; // 画面下からの固定位置
+  z-index: 100;
+  
+  // 2. 見た目の設定
+  width: 100%;
+  left: 0; // stickyの基準
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+
+  // 3. 非表示状態（JSで.showがつく前）
+  opacity: 0;
+  visibility: hidden;
+  // 画面中央下側に隠しておく
+  transform: translateY(50px); 
+  transition: all 0.5s ease;
+  pointer-events: none;
+
+  /* 表示時（JSで制御） */
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* リンクエリア */
+  &__link {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 6px 0;
+
+    @include mobile {
+      display: block; // スマホで表示
+      max-width: 400px;
+      width: 90%;
+    }
+
+  }}
+
+/* ----------------- */
+/* footer */
+/* ----------------- */
+.footer {
+  background-color: var(--color-footer);
+  padding:40px 0;
+  margin-top: 240px;
+
+  &__text {
+    color: #fff;
+    text-align: center;
+    line-height: 1.8;
+  }
+}
+
+/* ----------------- */
+/* topへ戻るボタン */
+/* ----------------- */
 .btn__page-top {
   position: fixed;
   right: 5%;
@@ -1433,128 +1610,3 @@ body.open {
   }
 
 
-/* ----------------- */
-/* banner */
-/* ----------------- */
-.banner {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: -100px;
-  transition: all 0.3s ease;
-  z-index: 10;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.5);
-
-  /* 表示時 */
-  &.show {
-    opacity: 1;
-    visibility: visible;
-    bottom: 0;
-    overflow: hidden;
-  
-    @include mobile {
-      bottom: 0;
-      }
-  }
-  /* 画像リンクは中央だけ */
-  &__link {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  
-  &__link img {
-    margin: 0 auto;
-    width: 500px;
-  
-    @include mobile {
-      width: 90%;
-    }
-  }
-}
-
-
-
-/* ----------------- */
-/* footer */
-/* ----------------- */
-.footer {
-  background-color: var(--color-footer);
-  padding:40px 0;
-
-  &__text {
-    color: #fff;
-    text-align: center;
-    line-height: 1.8;
-  }
-}
-/* ----------------- */
-/* faq */
-/* ----------------- */
-.faq {
-  &__title--em{
-    &::after{
-      width: 330px;
-
-      @include mobile{
-        width: 200px;
-      }
-  
-    }
-
-  }
-
-  &__wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
-
-  &__item {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    box-shadow: var(--shadow);
-    overflow: hidden; // 中身がはみ出ないように
-    transition: all 0.3s ease;
-
-    // 開いている時のスタイル
-    &[open] {
-      .faq__question::after {
-        transform: translateY(-50%) rotate(45deg); // ＋を×に変える
-      }
-    }
-  }
-
-  &__question {
-    list-style: none; // デフォルトの矢印を消す
-    padding: 24px 60px 24px 24px;
-    font-weight: 700;
-    position: relative;
-    user-select: none; // テキスト選択を防ぐ
-
-    // プラス（＋）アイコン
-    &::after {
-      content: "＋";
-      position: absolute;
-      right: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2.4rem;
-      color: var(--color-accent); 
-      transition: transform 0.3s ease;
-    }
-    
-  }
-
-  &__answer {
-    padding: 0 24px 24px;
-    line-height: 1.8;
-    border-top: 1px solid #f9f9f9;
-    text-align: justify;
-  }
-}

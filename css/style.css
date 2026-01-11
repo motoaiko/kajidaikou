@@ -124,6 +124,7 @@ a:hover {
 @media (max-width: 800px) {
   .heading {
     font-size: 1.8rem;
+    margin-bottom: 40px;
   }
 }
 
@@ -132,6 +133,14 @@ a:hover {
 /* -----------------------------------------*/
 .common {
   /* 英字サブタイトル */
+}
+.common__section {
+  margin-bottom: 240px;
+}
+@media (max-width: 800px) {
+  .common__section {
+    margin-bottom: 80px;
+  }
 }
 .common__title--em {
   position: relative;
@@ -452,7 +461,7 @@ a:hover {
 }
 
 /* -----------------------------------------*/
-/* メニューが開いた時の状態 */
+/* ハンバーガーメニューが開いた時の状態 */
 /* -----------------------------------------*/
 @media (max-width: 1024px) {
   body.open {
@@ -624,13 +633,14 @@ a:hover {
   padding: 160px 0;
   text-align: center;
   position: relative;
+  /* 吹き出し共通 */
+  /* 位置調整（吹き出しの口） */
 }
 @media (max-width: 800px) {
   .problem {
     padding: 80px 16px;
   }
 }
-
 .problem__title {
   margin-bottom: 120px;
 }
@@ -639,12 +649,10 @@ a:hover {
     margin-bottom: 24px;
   }
 }
-
 .problem__center {
   position: relative;
   display: inline-block;
 }
-
 .problem__illust {
   width: 300px;
   display: block;
@@ -656,8 +664,6 @@ a:hover {
     width: 240px;
   }
 }
-
-/* 吹き出し共通 */
 .problem__bubble {
   position: absolute;
   background: #fff;
@@ -675,13 +681,10 @@ a:hover {
     border-radius: 50px;
   }
 }
-
 .problem__em {
   display: inline;
   background: linear-gradient(transparent 60%, rgba(247, 227, 106, 0.6) 60%);
 }
-
-/* 位置調整（吹き出しの口） */
 .problem__bubble::after {
   content: "";
   position: absolute;
@@ -692,7 +695,6 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
-
 .problem__bubble--top-left {
   top: -40px;
   left: -200px;
@@ -707,7 +709,6 @@ a:hover {
     display: none;
   }
 }
-
 .problem__bubble--top-right {
   top: -40px;
   right: -200px;
@@ -722,7 +723,6 @@ a:hover {
     display: none;
   }
 }
-
 .problem__bubble--bottom-left {
   bottom: -20px;
   left: -260px;
@@ -737,7 +737,6 @@ a:hover {
     display: none;
   }
 }
-
 .problem__bubble--bottom-right {
   bottom: -20px;
   right: -260px;
@@ -873,11 +872,6 @@ a:hover {
 .solution__title-area {
   padding: 32px 24px;
 }
-@media (max-width: 800px) {
-  .solution__title {
-    margin-bottom: 24px;
-  }
-}
 .solution__title--em::after {
   left: 0%;
   top: 95%;
@@ -974,6 +968,7 @@ a:hover {
   .service-options__title {
     font-size: 2rem;
     padding-bottom: 8px;
+    margin-bottom: 24px;
   }
 }
 
@@ -1134,18 +1129,14 @@ a:hover {
   /* 下段：プラン名など */
   /* 左側：画像＋名前 */
   /* 右側：テキストエリア */
-  /* ----------------- */
-  /* もっと見るctaボタン */
-  /* ----------------- */
+  /* ---------------------------- */
+  /* お客様の声をもっと見るctaボタン */
+  /* ---------------------------- */
 }
 @media (max-width: 800px) {
   .voice {
     margin-bottom: 80px;
   }
-}
-.voice__title {
-  margin-bottom: 120px;
-  text-align: center;
 }
 @media (max-width: 800px) {
   .voice__title {
@@ -1279,7 +1270,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   width: 240px;
-  padding: 24px 60px;
+  padding: 16px 60px;
   background: var(--color-accent);
   color: #ffffff;
   font-weight: 700;
@@ -1313,6 +1304,176 @@ a:hover {
 .voice__cta-btn::after {
   transform: translateY(-50%) rotate(40deg);
   right: 15%;
+}
+
+/* ----------------- */
+/* faq */
+/* ----------------- */
+.faq__title {
+  margin-bottom: 80px;
+}
+@media (max-width: 800px) {
+  .faq__title {
+    margin-bottom: 40px;
+  }
+}
+.faq__title--em::after {
+  width: 320px;
+}
+@media (max-width: 800px) {
+  .faq__title--em::after {
+    width: 200px;
+  }
+}
+.faq__wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .faq__wrapper {
+    padding: 0 16px;
+  }
+}
+.faq__item {
+  margin-bottom: 24px;
+  text-align: justify;
+  background: #fff;
+  overflow: hidden;
+}
+@media (max-width: 800px) {
+  .faq__item {
+    max-width: 400px;
+    margin: 0 auto 16px;
+  }
+}
+.faq__item.is-open .faq__question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq__question {
+  font-weight: 500;
+  line-height: 1.6;
+  border-bottom: 1px solid #9f9c9c;
+  padding: 8px 24px 8px 32px;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+}
+@media (max-width: 800px) {
+  .faq__question {
+    padding: 8px 16px;
+  }
+}
+.faq__question::after {
+  content: "＋";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.4rem;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+@media (max-width: 800px) {
+  .faq__question::after {
+    right: 16px;
+  }
+}
+.faq__content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+.faq__answer {
+  font-size: 1.4rem;
+  padding: 16px 24px;
+  line-height: 1.8;
+  text-align: justify;
+}
+.faq__cta {
+  margin-top: 32px;
+  text-align: right;
+  text-decoration-line: underline;
+}
+@media (max-width: 800px) {
+  .faq__cta {
+    text-align: center;
+  }
+}
+.faq__cta-btn:hover {
+  transform: none;
+}
+
+/* ----------------- */
+/* cta-final */
+/* ----------------- */
+/* ------------------------------------- */
+/* cta-final (バナーを止める親要素) */
+/* ------------------------------------- */
+.cta-final {
+  position: relative;
+}
+.cta-final__title--em::after {
+  width: 270px;
+}
+
+/* バナーが動けるレールの役割 */
+.banner__sticky-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* ------------------------------------- */
+/* banner 本体 */
+/* ------------------------------------- */
+.banner {
+  position: sticky;
+  bottom: 20px;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+  /* 表示時（JSで制御） */
+  /* リンクエリア */
+}
+.banner.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.banner__link {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 6px 0;
+}
+@media (max-width: 800px) {
+  .banner__link {
+    display: block;
+    max-width: 400px;
+    width: 90%;
+  }
+}
+
+/* ----------------- */
+/* footer */
+/* ----------------- */
+.footer {
+  background-color: var(--color-footer);
+  padding: 40px 0;
+  margin-top: 240px;
+}
+.footer__text {
+  color: #fff;
+  text-align: center;
+  line-height: 1.8;
 }
 
 /* ----------------- */
@@ -1393,115 +1554,4 @@ a:hover {
 .arrow::after {
   right: 0;
   transform: rotate(-45deg);
-}
-
-/* ----------------- */
-/* banner */
-/* ----------------- */
-.banner {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: -100px;
-  transition: all 0.3s ease;
-  z-index: 10;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.5);
-  /* 表示時 */
-  /* 画像リンクは中央だけ */
-}
-.banner.show {
-  opacity: 1;
-  visibility: visible;
-  bottom: 0;
-  overflow: hidden;
-}
-@media (max-width: 800px) {
-  .banner.show {
-    bottom: 0;
-  }
-}
-.banner__link {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-}
-.banner__link img {
-  margin: 0 auto;
-  width: 500px;
-}
-@media (max-width: 800px) {
-  .banner__link img {
-    width: 90%;
-  }
-}
-
-/* ----------------- */
-/* footer */
-/* ----------------- */
-.footer {
-  background-color: var(--color-footer);
-  padding: 40px 0;
-}
-.footer__text {
-  color: #fff;
-  text-align: center;
-  line-height: 1.8;
-}
-
-/* ----------------- */
-/* faq */
-/* ----------------- */
-.faq__title--em::after {
-  width: 330px;
-}
-@media (max-width: 800px) {
-  .faq__title--em::after {
-    width: 200px;
-  }
-}
-.faq__wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-.faq__item {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.faq__item[open] .faq__question::after {
-  transform: translateY(-50%) rotate(45deg);
-}
-.faq__question {
-  list-style: none;
-  padding: 24px 60px 24px 24px;
-  font-weight: 700;
-  position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-.faq__question::after {
-  content: "＋";
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.4rem;
-  color: var(--color-accent);
-  transition: transform 0.3s ease;
-}
-.faq__answer {
-  padding: 0 24px 24px;
-  line-height: 1.8;
-  border-top: 1px solid #f9f9f9;
-  text-align: justify;
 }/*# sourceMappingURL=style.css.map */
