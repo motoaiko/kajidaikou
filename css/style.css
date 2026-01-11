@@ -1412,8 +1412,13 @@ a:hover {
 .cta-final {
   position: relative;
 }
-.cta-final__title--em ::after {
-  width: 270px;
+.cta-final__title--em::after {
+  width: 450px;
+}
+@media (max-width: 800px) {
+  .cta-final__title--em::after {
+    width: 270px;
+  }
 }
 
 /* バナーが動けるレールの役割 */

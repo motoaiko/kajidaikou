@@ -1449,8 +1449,14 @@ body.open {
 .cta-final {
   position: relative;
 
-  &__title--em ::after{
-    width: 270px;
+  &__title--em {
+    &::after {
+      width: 450px;
+      @include mobile{
+        width: 270px;
+
+      }
+    }  
   }
 }
 
