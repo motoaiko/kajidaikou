@@ -693,8 +693,7 @@ a:hover {
   background: #fff;
   transform: rotate(45deg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
-          clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 .problem__bubble--top-left {
   top: -40px;
@@ -703,8 +702,7 @@ a:hover {
 .problem__bubble--top-left::after {
   bottom: 10px;
   right: 0px;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
-          clip-path: polygon(0 0, 0 100%, 100% 50%);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-left::after {
@@ -718,8 +716,7 @@ a:hover {
 .problem__bubble--top-right::after {
   bottom: 5px;
   left: 24px;
-  -webkit-clip-path: polygon(100% 0, 0 30%, 100% 100%);
-          clip-path: polygon(100% 0, 0 30%, 100% 100%);
+  clip-path: polygon(100% 0, 0 30%, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-right::after {
@@ -733,8 +730,7 @@ a:hover {
 .problem__bubble--bottom-left::after {
   top: 8px;
   right: 0px;
-  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
-          clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-left::after {
@@ -749,8 +745,7 @@ a:hover {
   top: -4px;
   left: 20px;
   transform: rotate(-45deg);
-  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
-          clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-right::after {
@@ -964,7 +959,6 @@ a:hover {
   margin-bottom: 64px;
   border-bottom: 2px solid var(--color-accent);
   font-family: "M PLUS Rounded 1c", sans-serif;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -1398,8 +1392,7 @@ a:hover {
 .faq__cta {
   margin-top: 32px;
   text-align: right;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 @media (max-width: 800px) {
   .faq__cta {
@@ -1491,6 +1484,11 @@ a:hover {
   padding: 40px 0;
   margin-top: 240px;
 }
+@media (max-width: 800px) {
+  .footer {
+    margin-top: 80px;
+  }
+}
 .footer__text {
   color: #fff;
   text-align: center;
@@ -1575,5 +1573,4 @@ a:hover {
 .arrow::after {
   right: 0;
   transform: rotate(-45deg);
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
