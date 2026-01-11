@@ -1406,9 +1406,6 @@ a:hover {
 /* ----------------- */
 /* cta-final */
 /* ----------------- */
-/* ------------------------------------- */
-/* cta-final (バナーを止める親要素) */
-/* ------------------------------------- */
 .cta-final {
   position: relative;
 }
@@ -1423,7 +1420,50 @@ a:hover {
     width: 270px;
   }
 }
+.cta-final__offer {
+  margin-top: 24px;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .cta-final__offer {
+    margin-top: 16px;
+  }
+}
+.cta-final__offer--em {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  color: #b22222;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+.cta-final__price {
+  position: relative;
+}
+.cta-final__price::after {
+  content: "●";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
 
+.banner {
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.banner.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 .banner__stop-marker {
   position: relative;
   width: 100%;
@@ -1434,40 +1474,10 @@ a:hover {
     height: 80px;
   }
 }
-
-/* ------------------------------------- */
-/* banner 本体 */
-/* ------------------------------------- */
-.banner {
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.5);
-  /* アニメーション設定 */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease, transform 0.5s ease, bottom 0.1s ease;
-  pointer-events: none;
-}
-.banner.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
 .banner__link {
-  display: block;
-  max-width: 500px;
+  max-width: 560px;
   margin: 0 auto;
   padding: 6px 0;
-}
-.banner__link img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 @media (max-width: 800px) {
   .banner__link {
