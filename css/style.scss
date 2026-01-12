@@ -42,7 +42,7 @@ body{
 }
 
 a {
-  color: var(--color-link);
+  color: var(--color-accent);
   transition: all 0.5s ease;  
 
   &:hover {
@@ -123,7 +123,7 @@ a {
     }
   }
   &__subtitle--em{
-    color: var(--color-secondary);
+    color: var(--color-accent);
     display: inline-block;
     font-size: 3.2rem;
     font-weight: 700;
@@ -226,7 +226,7 @@ a {
     @include tablet {
       width: 50%;
       height: 100vh;
-      background-color: var(--color-secondary);
+      background-color: var(--color-accent);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -387,7 +387,7 @@ a {
     width: 56px;
     height: 56px;
     border-radius: 40%;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     z-index: 10000;
     right: 5%;
     top: 50%;
@@ -436,7 +436,7 @@ body.open {
       background-color: #fff;
 
       .bar {
-        background-color: var(--color-btn);
+        background-color: var(--color-accent);
 
         &:nth-child(1) {
           transform: rotate(45deg);
@@ -450,7 +450,7 @@ body.open {
       }
 
       .menu-text {
-        color: var(--color-btn);
+        color: var(--color-accent);
       }
     }
 
@@ -1069,7 +1069,7 @@ body.open {
 
   /* おすすめプラン */
   &--recommend {
-    border: 3px solid var(--color-link);
+    border: 3px solid var(--color-accent);
     background: #f7ffe9;
     position: relative;
     width: 80%;
@@ -1423,13 +1423,12 @@ body.open {
 }
 
   &__cta{
+    width: fit-content;
+    max-width: 100%;
     margin-top: 32px;
-    text-align: right;
-    text-decoration-line: underline;
+    border-bottom: 1px solid var(--color-accent);
+    margin: 40px auto 0;
 
-    @include mobile{
-      text-align: center;
-    }
   }
 
   &__cta-btn{
@@ -1488,9 +1487,10 @@ body.open {
     height: 20px;
     right: -24px;
     top: 3px;
-    color: var(--color-btn-hover);
+    color: var(--color-accent);
       
 
+    
     }
   }
 
@@ -1499,7 +1499,7 @@ body.open {
 .banner {
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 90;  // ハンバーガーメニューが100のため
   backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
   opacity: 0;
@@ -1552,7 +1552,11 @@ body.open {
   &__text {
     color: #fff;
     text-align: center;
-    line-height: 1.8;
+  }
+
+  &__year{
+    display: inline;
+    padding: 0 8px;
   }
 }
 

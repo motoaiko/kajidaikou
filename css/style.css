@@ -4,14 +4,14 @@
    ========================= */
 :root {
   /* =========================
-  Brand Colors（テーマカラー）
+  Brand Colors
   ========================= */
-  /* メインカラー：レモンイエロー */
+  /* メイン：イエロー */
   --color-primary: #F7E36A;
-  /* サブカラー：フレッシュグリーン */
-  --color-secondary: #8BC34A;
-  /* 強調用の濃いグリーン（ボタン・リンク） */
-  --color-accent: #5A8F2C;
+  /* アクセント：信頼のグリーン（ボタン、リンク、重要箇所のみ） */
+  --color-accent: #7CB342;
+  /* フッター背景（深いグリーン） */
+  --color-footer: #4E7A28;
   /* =========================
   Text Colors
   ========================= */
@@ -24,19 +24,8 @@
   ========================= */
   /* 全体の背景（柔らかいクリーム） */
   --color-bg-base: #FFFDF7;
-  /* セクション背景（淡いレモン） */
-  --color-bg-section: #FFF8D9;
-  /* =========================
-  UI Colors
-  ========================= */
-  /* ボタン（行動を促すグリーン） */
-  --color-btn: #8BC34A;
-  /* ボタンのホバー（少し濃く） */
-  --color-btn-hover: #6FAE3A;
-  /* リンク（アクセントグリーン） */
-  --color-link: #5A8F2C;
-  /* フッター背景（深いグリーン） */
-  --color-footer: #4E7A28;
+  /* セクション背景：淡い黄色で「家」の温かさを出す */
+  --color-bg-section: #FFFBE6;
   /* Shadow */
   --shadow: 0 2px 4px rgba(0, 0, 0, .3);
 }
@@ -97,7 +86,7 @@ body {
 }
 
 a {
-  color: var(--color-link);
+  color: var(--color-accent);
   transition: all 0.5s ease;
 }
 a:hover {
@@ -184,7 +173,7 @@ a:hover {
   }
 }
 .common__subtitle--em {
-  color: var(--color-secondary);
+  color: var(--color-accent);
   display: inline-block;
   font-size: 3.2rem;
   font-weight: 700;
@@ -281,7 +270,7 @@ a:hover {
   .header__nav {
     width: 50%;
     height: 100vh;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -426,7 +415,7 @@ a:hover {
     width: 56px;
     height: 56px;
     border-radius: 40%;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     z-index: 10000;
     right: 5%;
     top: 50%;
@@ -471,7 +460,7 @@ a:hover {
     background-color: #fff;
   }
   body.open .hamburger .bar {
-    background-color: var(--color-btn);
+    background-color: var(--color-accent);
   }
   body.open .hamburger .bar:nth-child(1) {
     transform: rotate(45deg);
@@ -482,7 +471,7 @@ a:hover {
     top: 4px;
   }
   body.open .hamburger .menu-text {
-    color: var(--color-btn);
+    color: var(--color-accent);
   }
   body.open .header__nav {
     transform: translateX(0);
@@ -1064,7 +1053,7 @@ a:hover {
   }
 }
 .service-plan--recommend {
-  border: 3px solid var(--color-link);
+  border: 3px solid var(--color-accent);
   background: #f7ffe9;
   position: relative;
   width: 80%;
@@ -1390,14 +1379,12 @@ a:hover {
   text-align: justify;
 }
 .faq__cta {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 32px;
-  text-align: right;
-  text-decoration-line: underline;
-}
-@media (max-width: 800px) {
-  .faq__cta {
-    text-align: center;
-  }
+  border-bottom: 1px solid var(--color-accent);
+  margin: 40px auto 0;
 }
 .faq__cta-btn:hover {
   transform: none;
@@ -1448,13 +1435,13 @@ a:hover {
   height: 20px;
   right: -24px;
   top: 3px;
-  color: var(--color-btn-hover);
+  color: var(--color-accent);
 }
 
 .banner {
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 90;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
@@ -1506,7 +1493,10 @@ a:hover {
 .footer__text {
   color: #fff;
   text-align: center;
-  line-height: 1.8;
+}
+.footer__year {
+  display: inline;
+  padding: 0 8px;
 }
 
 /* ----------------- */
