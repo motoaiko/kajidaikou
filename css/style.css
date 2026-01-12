@@ -520,7 +520,8 @@ a:hover {
 }
 .fv__bg--right {
   right: 0;
-  background-image: url("../img/fv2.webp");
+  background-image: url("../img/voicebg.webp");
+  background-position: right;
   width: 40%;
 }
 @media (max-width: 800px) {
@@ -641,6 +642,17 @@ a:hover {
 .problem__center {
   position: relative;
   display: inline-block;
+}
+.problem__center::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 120px;
+  background: url(../img/tokei.webp) no-repeat center/contain;
+  bottom: 90%;
+  right: 0px;
+  z-index: 1;
+  transform: rotate(30deg);
 }
 .problem__illust {
   width: 300px;
@@ -1427,6 +1439,7 @@ a:hover {
 .cta-final__price {
   position: relative;
   display: inline-block;
+  border-bottom: 1px solid var(--color-accent);
 }
 .cta-final__price::after {
   content: "▲";
@@ -1436,6 +1449,7 @@ a:hover {
   right: -24px;
   top: 3px;
   color: var(--color-accent);
+  display: contents;
 }
 
 .banner {

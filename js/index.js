@@ -155,103 +155,71 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
+
+	/* ------------------------------------- */
+	// ページ内リンクへ	/* ------------------------------------- */
+	const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+
+	smoothScrollLinks.forEach((link) => {
+		link.addEventListener('click', function (e) {
+			const href = this.getAttribute('href');
+
+			// "#" だけの場合/ページトップへのリンクは除外
+			if (href === '#' || href === '#top' || this.id === 'page-top') return;
+
+			const target = document.querySelector(href);
+
+			if (target) {
+				e.preventDefault(); // デフォルトの動作をキャンセル
+
+				// ヘッダーの高さを取得（固定ヘッダー分を差し引くため）
+				const header = document.getElementById('header');
+				const headerHeight = header ? header.offsetHeight : 0;
+
+				// ターゲットの位置を取得
+				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+				// スクロール位置の計算（ヘッダー分 + 余白20pxを引く）
+				const offsetPosition = targetPosition - headerHeight;
+
+				window.scrollTo({
+					top: offsetPosition,
+					behavior: 'smooth',
+				});
+			}
+		});
+	});
+
+	/* ------------------------------------- */
+	// フェードアップ（スクロール監視）
+	/* ------------------------------------- */
+	const fadeUpElements = document.querySelectorAll('.js-fadeup');
+
+	const fadeUpObserver = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				// 要素が画面に入ったら（20%くらい見えたら）
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-inview');
+					// 一度表示されたら監視をやめる（何度もふわふわさせない場合）
+					fadeUpObserver.unobserve(entry.target);
+				}
+			});
+		},
+		{
+			// 判定のしきい値：要素が何%見えたら実行するか（0.2 = 20%）
+			threshold: 0.2,
+			// 画面の下端からどのくらい手前で反応させるか（jQuery版の +50px に相当）
+			rootMargin: '0px 0px -50px 0px',
+		}
+	);
+
+	fadeUpElements.forEach((el) => {
+		fadeUpObserver.observe(el);
+	});
 });// 全てのJSの閉じカッコ
 
 
-/* ------------------------------------- */
-// フェードアップ
-/* ------------------------------------- */
-// $(window).on('scroll load', function () {
-// 	const winTop = $(window).scrollTop();
-// 	const winHeight = $(window).height();
 
-// 	$('.js-fadeup').each(function () {
-// 		const targetTop = $(this).offset().top;
-// 		$(this).toggleClass('is-inview', winTop + winHeight > targetTop + 50);
-// 	});
-// });
-
-// jQuery(function ($) {
-// 	/* ------------------------------------- */
-// 	// スライダー
-// 	/* ------------------------------------- */
-
-// 	$(function () {
-// 		$('#slider')
-// 			.on('init', function () {
-// 				// 最初のスライドに"add-animation"のclassを付ける(data-slick-index="0"が最初のスライドを指す)
-// 				$('.slick-slide[data-slick-index="0"]').addClass('add-animation');
-// 			})
-// 			// 通常のオプション
-// 			.slick({
-// 				autoplay: true, // 自動再生ON
-// 				fade: true, // フェードON
-// 				arrows: false, // 矢印OFF
-// 				speed: 2000, // スライド、フェードアニメーションの速度2000ミリ秒
-// 				autoplaySpeed: 3000, // 自動再生速度4000ミリ秒
-// 				pauseOnFocus: false, // フォーカスで一時停止OFF
-// 				pauseOnHover: false, // マウスホバーで一時停止OFF
-// 			})
-// 			.on({
-// 				// スライドが移動する前に発生するイベント
-// 				beforeChange: function (event, slick, currentSlide, nextSlide) {
-// 					// 表示されているスライドに"add-animation"のclassをつける
-// 					$('.slick-slide', this).eq(nextSlide).addClass('add-animation');
-// 					// あとで"add-animation"のclassを消すための"remove-animation"classを付ける
-// 					$('.slick-slide', this).eq(currentSlide).addClass('remove-animation');
-// 				},
-// 				// スライドが移動した後に発生するイベント
-// 				afterChange: function () {
-// 					// 表示していないスライドはアニメーションのclassを外す
-// 					$('.remove-animation', this).removeClass('remove-animation add-animation');
-// 				},
-// 			});
-// 	});
-
-// 	/* ------------------------------------- */
-// 	// ページ内リンクへ
-// 	/* ------------------------------------- */
-
-// 	$(function () {
-// 		$('a[href^="#"]').click(function (event) {
-// 			event.preventDefault();
-// 			var speed = 600;
-// 			var href = $(this).attr('href');
-// 			var target = $(href);
-// 			if (target.length) {
-// 				var headerHeight = $('#header').outerHeight(); // ヘッダーの高さを取得
-// 				$('html, body').animate(
-// 					{
-// 						scrollTop: target.offset().top - headerHeight - 20, // 余白を追加
-// 					},
-// 					speed,
-// 					'swing'
-// 				);
-// 			}
-// 		});
-// 	});
-
-// 	/* ------------------------------------- */
-// 	// topへ戻る
-// 	/* ------------------------------------- */
-
-// 	$(function () {
-// 		const $pageTopBtn = $('#page-top');
-// 		const headerHeight = $('#header').outerHeight();
-
-// 		$(window).on('scroll', function () {
-// 			if ($(window).scrollTop() > headerHeight) {
-// 				$pageTopBtn.addClass('show');
-// 			} else {
-// 				$pageTopBtn.removeClass('show');
-// 			}
-// 		});
-
-// 		$pageTopBtn.on('click', function (e) {
-// 			e.preventDefault();
-// 			$('html, body').animate({ scrollTop: 0 }, 600);
-// 		});
-// 	});
-// });
 
 

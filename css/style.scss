@@ -507,8 +507,10 @@ body.open {
 
     &--right {
       right: 0;
-      background-image: url("../img/fv2.webp");
+      background-image: url("../img/voicebg.webp");
+      background-position: right;
       width: 40%;
+
     
     @include mobile {
       display: none;
@@ -631,6 +633,19 @@ body.open {
   &__center {
     position: relative;
     display: inline-block;
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 120px;
+      background: url(../img/tokei.webp) no-repeat center / contain;
+      bottom: 90%;
+      right: 0px;
+      z-index: 1;
+      transform: rotate(30deg);
+    }
+
   }
 
   &__illust {
@@ -1479,6 +1494,7 @@ body.open {
   &__price{
     position: relative;
     display: inline-block;
+    border-bottom: 1px solid var(--color-accent);
 
     &::after{
     content: "▲";
@@ -1488,9 +1504,8 @@ body.open {
     right: -24px;
     top: 3px;
     color: var(--color-accent);
-      
+    display: contents;
 
-    
     }
   }
 

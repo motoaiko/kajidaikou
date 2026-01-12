@@ -30,7 +30,7 @@
 		<link rel="stylesheet" href="css/style.css">
 
 		<!-- favicon -->
-		<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+		<link rel="icon" href="img/logo.svg" type="image/svg+xml">
 		<script src="https://kit.fontawesome.com/0ec846d745.js" crossorigin="anonymous"></script>
 
 		<!-- googleフォント -->
@@ -53,22 +53,22 @@
 		<header id="header" class="header">
 			<div class="header__inner">
 				<h1 class="header__logo">
-					<a href="#header"><img src="img/logo.webp" alt="Sora Sapport ロゴ"></a>
+					<a href="#fv"><img src="img/logo.webp" alt="Sora Sapport ロゴ"></a>
 				</h1>
 			
 				<nav class="header__nav" >
 					<ul class="header__list">
 						<li class="header__item">
-							<a href="#">TOP</a>
+							<a href="#fv">TOP</a>
 						</li>
 						<li class="header__item">
-							<a href="#">サービスのご案内</a>
+							<a href="#problem">サービスのご案内</a>
 						</li>
 						<li class="header__item">
-							<a href="#">お客様の声</a>
+							<a href="#voice">お客様の声</a>
 						</li>
 						<li class="header__item">
-							<a href="#">お問い合わせ</a>
+							<a href="#faq">よくあるご質問</a>
 						</li>
 
 						<!-- Facebook --> 
@@ -81,7 +81,7 @@
 						</li>
 						<!-- CTAボタン -->
 						<li class="header__item header__item--cta">
-							<a href="#contact" class="header__cta">初回お試し</a>
+							<a href="#cta-final" class="header__cta">初回お試し</a>
 						</li>
 					</ul>
 				</nav>
@@ -94,7 +94,7 @@
 			</button>
 		</header>
 		<main>
-			<section class="fv">
+			<section id="fv" class="fv">
 				<div class="fv__bg fv__bg--left"></div>
 				<div class="fv__bg fv__bg--right"></div>
 				<div class="fv__content">
@@ -108,12 +108,12 @@
 						家族との時間、<br class="mobile">自分のための時間を、<br class="mobile">もっと大切にできる暮らしへ。
 					</p>
 					<div class="fv__cta-area header__item--cta">
-						<a href="#" class="fv__cta header__cta heading">初回お試しはこちらから</a>
+						<a href="#cta-final" class="fv__cta header__cta heading">初回お試しはこちらから</a>
 					</div>
 				</div>
 			</section>
 			
-			<section class="problem">
+			<section id="problem" class="problem js-fadeup">
 				<h2 class="problem__title heading">
 					<span class="common__title--en">Daily Housework Stress</span>
 					<span class="problem__title--em common__title--em"> 家事の負担</span>、<br class="mobile">ひとりで抱えていませんか?
@@ -140,8 +140,7 @@
 				
 			</section>
 			
-
-			<section class="solution common__section">
+			<section class="solution common__section js-fadeup">
 
 				<!-- 写真背景エリア -->
 				<div class="photo">
@@ -156,13 +155,13 @@
 				</div>
 
 				<!-- h2 -->
-				<h2 class="solution__title heading">
+				<h2 class="solution__title heading js-fadeup">
 					<span class="common__title--en">Our Service</span>
 					あなたの<span class="solution__title--em common__title--em">暮らしを軽くする</span><br class="mobile">サポート
 				</h2>
 
 				<!-- サービス内容について -->
-				<div class="service-options">
+				<div class="service-options js-fadeup">
 					<h3 class="service-options__title ">サービス内容
 					</h3>	
 
@@ -206,7 +205,7 @@
 				</div>
 
 				<!-- ご利用時間と料金について -->
-				<div class="service-time service-options">
+				<div class="service-time service-options js-fadeup">
 					<h3 class="service-options__title">ご利用時間と料金
 					</h3>
 
@@ -248,14 +247,14 @@
 
 			</section>
 
-			<section id="voice" class="voice common__section">
+			<section id="voice" class="voice common__section js-fadeup">
 
 				<h2 class="voice__title heading">
 					<span class="voice__title--en common__title--en">Voice</span>
 					<span class="voice__title--em common__title--em">お客様の声</span>
 				</h2>
 
-				<div class="voice__wrapper">
+				<div class="voice__wrapper js-fadeup">
 					<ul class="voice__container">
 						<li class="voice__content">
 							<div class="voice__content--top">
@@ -330,13 +329,12 @@
 				</ul>
 				</div>
 
-
-				<div class="voice__cta">
+				<div class="voice__cta js-fadeup">
 					<a href="#" class="voice__cta-btn">お客様の声をもっと見る</a>
 				</div>
 			</section>
 
-			<section id="faq" class="faq common__section" >
+			<section id="faq" class="faq common__section js-fadeup" >
 
 				<h2 class="faq__title heading">
 					<span class="faq__title--en common__title--en">Question</span>
@@ -381,7 +379,7 @@
 		
 			</section>
 
-			<section class="cta-final common__section">
+			<section id="cta-final" class="cta-final common__section js-fadeup">
 				<h2 class="cta-final__title heading">
 					<span class="cta-final__title--en common__title--en">Special Offer</span>
 					<span class="cta-final__title--em common__title--em">初回割引キャンペーン</span>
