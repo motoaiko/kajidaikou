@@ -241,7 +241,6 @@ a:hover {
 @media (max-width: 800px) {
   .header {
     height: 80px;
-    overflow: hidden;
   }
 }
 .header__inner {
