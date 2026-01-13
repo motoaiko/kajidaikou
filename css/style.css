@@ -207,6 +207,13 @@ a:hover {
   transform: translateY(80px);
   transition: opacity 1s ease, transform 1s ease;
 }
+@media (max-width: 800px) {
+  .js-fadeup {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+}
 .js-fadeup.is-inview {
   opacity: 1;
   transform: translateY(0);

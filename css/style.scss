@@ -158,6 +158,13 @@ a {
   transform: translateY(80px);
   transition: opacity 1s ease, transform 1s ease;
 
+  // モバイル時はアニメーションさせず、最初から表示
+  @include mobile {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important; // 遷移アニメーションも無効化
+  }
+
   &.is-inview {
     opacity: 1;
     transform: translateY(0);
