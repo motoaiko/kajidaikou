@@ -334,13 +334,11 @@ a {
       display: none;
     }
 
-
-
     @include tablet {
       display: block;
       text-align: center;
       font-size:1.6rem;
-
+      padding: 8px 32px;
     }
   }
   &__cta{

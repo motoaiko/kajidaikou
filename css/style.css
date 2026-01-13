@@ -370,6 +370,7 @@ a:hover {
     display: block;
     text-align: center;
     font-size: 1.6rem;
+    padding: 8px 32px;
   }
 }
 .header__cta {
