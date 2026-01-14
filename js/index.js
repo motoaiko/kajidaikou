@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// ボタンが押されたら
 			e.preventDefault();
 			window.scrollTo({
+				//.scrollTo=移動を指示するmethod
 				top: 0,
 				behavior: 'smooth',
 			}); // smoothに一番上top: 0まで戻す
@@ -161,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				item.classList.remove('is-open');
 				content.style.height = '0px'; // 高さを0にする
 
-				
 				content.addEventListener(
 					'transitionend', // contentのアニメーション（transition）が終わったら実行
 					() => {
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/* ------------------------------------- */
 	// ページ内リンクへ	/* ------------------------------------- */
-	const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');// href属性が#で始まる全てのリンクaを取得
+	const smoothScrollLinks = document.querySelectorAll('a[href^="#"]'); // href属性が#で始まる全てのリンクaを取得
 
 	smoothScrollLinks.forEach((link) => {
 		link.addEventListener('click', function (e) {
@@ -199,13 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				// ターゲットの位置を取得
 				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-				// 「今見えている画面の枠」から見た、目的地の距離 + 今のスクロール位置 = ドキュメント全体の上から見た目的地の位置
-				// スクロール位置の計算（目的地の位置からヘッダー分を引く）
-				const offsetPosition = targetPosition - headerHeight;
+				// 「今見えている画面の枠」から見た目的地の距離 + 今のスクロール位置 = ドキュメント全体の上から見た目的地の位置
+				const offsetPosition = targetPosition - headerHeight; // スクロール位置の計算（目的地の位置からヘッダー分を引く）
 
 				window.scrollTo({
 					//.scrollTo=移動を指示するmethod
-					top: offsetPosition, // ヘッダー分を引いた位置offsetPositionまでスクロール
+					top: offsetPosition, // ヘッダー分を引いた位置=offsetPositionまでスクロール
 					behavior: 'smooth',
 				});
 			}
@@ -213,9 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	/* ------------------------------------- */
-	// フェードアップ（スクロール監視）
+	// フェードアップ/画面の底から50px以上、かつ本体の20%以上見えたら、.is-inview をつける
 	/* ------------------------------------- */
-	const fadeUpElements = document.querySelectorAll('.js-fadeup');
+	const fadeUpElements = document.querySelectorAll('.js-fadeup'); //クラス名 .js-fadeup がついている要素をすべて探し出し、「監視リスト」に登録
 
 	const fadeUpObserver = new IntersectionObserver(
 		(entries) => {
@@ -223,15 +222,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				// 要素が画面に入ったら
 				if (entry.isIntersecting) {
 					entry.target.classList.add('is-inview');
-					// 一度表示されたら監視をやめる（何度もふわふわさせない場合）
-					// fadeUpObserver.unobserve(entry.target);
+					fadeUpObserver.unobserve(entry.target);
 				}
 			});
 		},
 		{
-			// 判定のしきい値：要素が何%見えたら実行するか（0.2 = 20%）
+			// 要素が0.2 = 20%見えたら実行する
 			threshold: 0.2,
-			// 画面の下端からどのくらい手前で反応させるか（jQuery版の +50px に相当）
+			// 画面の下端から-50pxで反応させる
 			rootMargin: '0px 0px -50px 0px',
 		}
 	);
@@ -239,9 +237,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	fadeUpElements.forEach((el) => {
 		fadeUpObserver.observe(el);
 	});
-});// 全てのJSの閉じカッコ
-
-
-
-
-
+}); // 全てのJSの閉じカッコ

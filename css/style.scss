@@ -230,7 +230,7 @@ a {
     transform: translateY(-50%);
 
     @include tablet {
-      width: 50%;
+      width: 60%;
       height: 100vh;
       background-color: var(--color-accent);
       display: flex;
@@ -486,7 +486,8 @@ body.open {
 
   @include mobile {
     height: auto;
-    padding-bottom: 32px;
+    padding-top: 70px;
+    display: block;
   }
 
   &__bg {
@@ -496,122 +497,128 @@ body.open {
     background-size: cover;
     background-position: center;
     z-index: 1;
-  
-
 
     &--left {
       left: 0;
-      background-image: url("../img/fv1.webp");
-      width: 60%;
+      background-image: url(../img/fv1.webp);
+      width: 70%;
+      background-position-x: -250px;
 
       @include mobile {
         width: 100%;
-      }    
+        clip-path: none;
+        background-position-x: center;
+      }
     }
 
     &--right {
       right: 0;
-      background-image: url("../img/voicebg.webp");
-      background-position: right;
-      width: 40%;
+      background-image: url(../img/voicebg.webp);
+      width: 50%;
 
-    
-    @include mobile {
-      display: none;
+      @include mobile {
+        display: none; 
+      }
     }
-   }
   }
+
   &__content {
     position: relative;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.8) no-repeat center / contain;
-    padding: 48px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 100vh 0px;
     text-align: center;
-    border-radius: 150px;
+    transform: skewX(-10deg);
+    width: 500px;
 
     @include mobile {
-      padding: 48px 16px;
-      border-radius: 50px;
+      margin: 40px auto;
+      height: auto;
+      background: rgba(255, 255, 255, 0.8);
       width: 80%;
-    }
-  }
-
-  &__title {
-    font-size:36px;
-    font-weight: 700;
-    color: var(--color-text-main);
-    line-height: 1.4;
-    margin-bottom:40px;
-
-    @include mobile {
-      font-size:1.8rem;
-    }
-  }
-
-
-  &__title--em {
-    color: var(--color-accent);
-    display: inline-block;
-    font-size: 54px;
-    text-decoration: underline wavy var(--color-primary);
-    text-decoration-thickness: 4px;
-    text-underline-offset:16px; 
-
-    @include mobile {
-      font-size:3.2rem;
-      text-underline-offset: 8px;
-    }
-  }
-  
-  
-
-  &__subtitle {
-    font-size: var(--fs-md);
-    color: var(--color-text-sub);
-    margin-bottom:32px;
-
-    @include mobile {
-      font-size: 1.6rem;
-      text-align: center;
-      margin-top: 24px;
-    }
-  }
-
-
-  &__cta {
-    margin: 0 auto;
-    padding: 6px 32px;
-    font-weight: 700;
-    font-size: 20px;
-
-    @include mobile {
-      padding: 8px 24px;
-      font-size:1.4rem;
+      padding: 70px 0;
+      border-radius: 50px;
+      transform: none;
     }
 
-    &:hover {
-      transform: translateY(-3px);
-      opacity: 1;
-      
+    // 中身の文字が斜めにならないよう逆方向に補正
+    & > * {
+      transform: skewX(10deg);
+
       @include mobile {
         transform: none;
       }
     }
-
   }
 
-  &__cta-area{
-    display: flex;
-    width: 60%;
-    margin: 0 auto;
+  &__title {
+    margin: 0 auto 60px;
+    font-size: 4rem;
+    padding: 10% 6% 0 0;
+    line-height: 1.6;
 
     @include mobile {
-      max-width: 24
-      0px;
-    }
+      padding: 0;
+      margin-bottom: 24px;
+      font-size: 2.4rem;      }
   }
+
+  &__title--em {
+    color: var(--color-accent);
+    font-size: 6rem;
+
+    @include mobile {
+      font-size: 3.2rem;
+      letter-spacing: inherit;    }
+
+    &::after{
+      width: 340px;
+      
+      @include mobile {
+        width: 180px;
+        top: 100%;
+      }
+    }
 }
 
+  &__subtitle {
+    margin-bottom: 32px;
+  }
+
+
+  &__item--cta{
+    display: inline-block;
+
+    &:hover{
+      opacity: 1;
+      transform: translateY(-2px) skewX(10deg);
+    }
+  }
+
+  &__cta {
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    display: inline-block; 
+    transform: skewX(0deg); 
+
+    @include mobile {
+      padding: 8px;
+      font-size: 1.4rem;
+        }
+
+    &:hover{
+      opacity: 1;
+      transform: skewX(0deg);
+
+      @include mobile {
+        transform: none;
+      }
+
+    }
+
+  }
+}
 /* -----------------------------------------*/
 /* problem */
 /* -----------------------------------------*/
