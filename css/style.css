@@ -40,6 +40,9 @@
 /* スマホ */
 /* タブレット※スマホを含む */
 /* PC */
+/* =========================
+   装飾のキラキラ
+   ========================= */
 /* ----------------- */
 /* 共通設定*/
 /* ----------------- */
@@ -379,6 +382,7 @@ a:hover {
 }
 .header__cta:hover {
   opacity: 1;
+  transform: none;
 }
 .header__sns-icon {
   display: flex;
@@ -572,12 +576,34 @@ a:hover {
   font-size: 4rem;
   padding: 10% 6% 0 0;
   line-height: 1.6;
+  position: relative;
+  position: relative;
 }
 @media (max-width: 800px) {
   .fv__title {
     padding: 0;
     margin-bottom: 24px;
     font-size: 2.4rem;
+  }
+}
+.fv__title::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  background: url(../img/kirakira.png) no-repeat center/contain;
+  top: -20%;
+  left: -10%;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  .fv__title::before {
+    width: 100px;
+    height: 100px;
+    top: -60%;
+    left: 0%;
   }
 }
 .fv__title--em {
@@ -834,14 +860,36 @@ a:hover {
   }
 }
 .photo__title {
+  position: relative;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5em;
   color: #4a6741;
+  position: relative;
 }
-@media (max-width: 480px) {
+@media (max-width: 800px) {
   .photo__title {
     font-size: 1.1rem;
+  }
+}
+.photo__title::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  background: url(../img/kirakira.png) no-repeat center/contain;
+  top: 50%;
+  left: 100%;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  .photo__title::before {
+    width: 70px;
+    height: 70px;
+    top: -60%;
+    left: 100%;
   }
 }
 .photo__sub {
@@ -1525,9 +1573,44 @@ a:hover {
   color: #fff;
   text-align: center;
 }
+@media (max-width: 800px) {
+  .footer__text {
+    margin-bottom: 0.8rem;
+  }
+}
+.footer__text:hover {
+  opacity: 1;
+  transform: none;
+}
 .footer__year {
   display: inline;
   padding: 0 8px;
+}
+.footer__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.6rem;
+  font-size: 1.4rem;
+}
+@media (max-width: 800px) {
+  .footer__content {
+    flex-direction: column;
+    gap: 0px;
+    font-size: 1.2rem;
+    margin: 0 auto 1.6rem;
+  }
+}
+.footer__after::after {
+  content: "|";
+  margin: 0 8px;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .footer__after::after {
+    display: none;
+  }
 }
 
 /* ----------------- */
