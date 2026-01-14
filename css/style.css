@@ -41,8 +41,8 @@
 /* タブレット※スマホを含む */
 /* PC */
 /* =========================
-   装飾のキラキラ
-   ========================= */
+  装飾のキラキラ
+  ========================= */
 /* ----------------- */
 /* 共通設定*/
 /* ----------------- */
@@ -1553,7 +1553,11 @@ a:hover {
   .banner__link {
     max-width: 400px;
     width: 90%;
+    padding: 0;
   }
+}
+.banner__img {
+  box-shadow: var(--shadow);
 }
 
 /* ----------------- */
@@ -1591,7 +1595,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 1.6rem;
+  margin: 0 auto 1.6rem;
   font-size: 1.4rem;
 }
 @media (max-width: 800px) {
@@ -1599,7 +1603,6 @@ a:hover {
     flex-direction: column;
     gap: 0px;
     font-size: 1.2rem;
-    margin: 0 auto 1.6rem;
   }
 }
 .footer__after::after {

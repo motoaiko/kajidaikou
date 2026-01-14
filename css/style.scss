@@ -1557,9 +1557,13 @@ body.open {
     @include mobile {
       max-width: 400px;
       width: 90%;
+      padding: 0;
     }
   }
 
+  &__img {
+    box-shadow: var(--shadow);
+  }
 }
 
 /* ----------------- */
@@ -1598,14 +1602,14 @@ body.open {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 1.6rem;
+    margin: 0 auto 1.6rem;   
     font-size: 1.4rem;
 
     @include mobile {
       flex-direction: column;
       gap: 0px;
       font-size: 1.2rem;
-      margin: 0 auto 1.6rem;    }
+    }
   }
 
   &__after{
