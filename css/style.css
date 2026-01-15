@@ -529,7 +529,8 @@ a:hover {
 @media (max-width: 800px) {
   .fv__bg--left {
     width: 100%;
-    clip-path: none;
+    -webkit-clip-path: none;
+            clip-path: none;
     background-position-x: center;
   }
 }
@@ -686,17 +687,6 @@ a:hover {
   position: relative;
   display: inline-block;
 }
-.problem__center::after {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 120px;
-  background: url(../img/tokei.webp) no-repeat center/contain;
-  bottom: 90%;
-  right: 0px;
-  z-index: 1;
-  transform: rotate(30deg);
-}
 .problem__illust {
   width: 300px;
   display: block;
@@ -737,7 +727,8 @@ a:hover {
   background: #fff;
   transform: rotate(45deg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
+          clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 .problem__bubble--top-left {
   top: -40px;
@@ -746,7 +737,8 @@ a:hover {
 .problem__bubble--top-left::after {
   bottom: 10px;
   right: 0px;
-  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+          clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-left::after {
@@ -760,7 +752,8 @@ a:hover {
 .problem__bubble--top-right::after {
   bottom: 5px;
   left: 24px;
-  clip-path: polygon(100% 0, 0 30%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 30%, 100% 100%);
+          clip-path: polygon(100% 0, 0 30%, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-right::after {
@@ -774,7 +767,8 @@ a:hover {
 .problem__bubble--bottom-left::after {
   top: 8px;
   right: 0px;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-left::after {
@@ -789,7 +783,8 @@ a:hover {
   top: -4px;
   left: 20px;
   transform: rotate(-45deg);
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-right::after {
@@ -1025,6 +1020,7 @@ a:hover {
   margin-bottom: 64px;
   border-bottom: 2px solid var(--color-accent);
   font-family: "M PLUS Rounded 1c", sans-serif;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -1456,6 +1452,7 @@ a:hover {
   text-align: justify;
 }
 .faq__cta {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -1694,4 +1691,5 @@ a:hover {
 .arrow::after {
   right: 0;
   transform: rotate(-45deg);
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

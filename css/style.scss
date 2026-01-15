@@ -643,17 +643,17 @@ body.open {
     position: relative;
     display: inline-block;
 
-    &::after{
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 120px;
-      background: url(../img/tokei.webp) no-repeat center / contain;
-      bottom: 90%;
-      right: 0px;
-      z-index: 1;
-      transform: rotate(30deg);
-    }
+    // &::after{
+    //   content: "";
+    //   position: absolute;
+    //   width: 180px;
+    //   height: 120px;
+    //   background: url(../img/tokei.webp) no-repeat center / contain;
+    //   bottom: 90%;
+    //   right: 0px;
+    //   z-index: 1;
+    //   transform: rotate(30deg);
+    // }
 
   }
 
