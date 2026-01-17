@@ -516,27 +516,34 @@ a:hover {
   position: absolute;
   top: 0;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   z-index: 1;
+}
+.fv__bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .fv__bg--left {
   left: 0;
-  background-image: url(../img/fv1.webp);
   width: 70%;
-  background-position-x: -250px;
+}
+.fv__bg--left img {
+  -o-object-position: -250px center;
+     object-position: -250px center;
 }
 @media (max-width: 800px) {
   .fv__bg--left {
     width: 100%;
-    -webkit-clip-path: none;
-            clip-path: none;
-    background-position-x: center;
+  }
+  .fv__bg--left img {
+    -o-object-position: center;
+       object-position: center;
   }
 }
 .fv__bg--right {
   right: 0;
-  background-image: url(../img/voicebg.webp);
   width: 50%;
 }
 @media (max-width: 800px) {

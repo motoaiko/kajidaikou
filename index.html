@@ -80,8 +80,14 @@
 		</header>
 		<main>
 			<section id="fv" class="fv">
-				<div class="fv__bg fv__bg--left"></div>
-				<div class="fv__bg fv__bg--right"></div>
+				<div class="fv__bg fv__bg--left">
+					<!-- 最優先/同時進行でimgのダウンロード fetchpriority="high" / decoding="async" -->
+					<img src="img/fv1.webp" alt="家事代行サービスのイメージ" fetchpriority="high" decoding="async">
+				</div>
+				<div class="fv__bg fv__bg--right">
+					<img src="img/voicebg.webp" alt="" decoding="async">
+				</div>
+				
 				<div class="fv__content">
 					<h2 class="heading fv__title">
 						家事の時間を<br>
@@ -96,7 +102,8 @@
 					</div>
 				</div>
 			</section>
-			
+
+
 			<section id="problem" class="problem js-fadeup">
 				<h2 class="problem__title heading">
 					<span class="common__title--en">Daily Housework Stress</span>
