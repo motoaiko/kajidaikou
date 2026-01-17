@@ -100,7 +100,7 @@ a {
       display: inline-block;
       width: 240px;
       height: 18px;
-      background-image: url(../img/line-removebg-preview.png);
+      background-image: url(../img/line.webp);
       position: absolute;
       top: 100%;
       left: 0px;
@@ -814,11 +814,12 @@ body.open {
     position: absolute;
     width: 180px;
     height: 120px;
-    background: url(../img/hukidasi.png) no-repeat center / contain;
+    background: url(../img/hukidasi.webp) no-repeat center / contain;
     bottom: 75%;
     left: -16%;
     z-index: 1;
     transform: rotate(-12deg);
+
 
     @include mobile {
       width: 120px;
@@ -865,7 +866,7 @@ body.open {
         content: ""; 
         width: 230px;
         height: 20px;
-        background-image: url(../img/line-removebg-preview.png);
+        background-image: url(../img/line.webp);
         position: absolute;
         top: 90%;
         left: 0px;
