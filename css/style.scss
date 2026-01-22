@@ -133,8 +133,6 @@ a {
       font-size: 2.4rem;
     }
   }
-
-  /* 英字サブタイトル */
   &__title--en {
     display: block;
     font-family: "Quicksand", sans-serif;
@@ -802,6 +800,7 @@ body.open {
     position: relative;
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: rgba(255, 255, 255, 0.9);
+    background-image: url(https://www.transparenttextures.com/patterns/connected.png);
     padding: 60px 80px;
     border-radius: 50px;
     box-shadow: var(--shadow);
@@ -1719,5 +1718,4 @@ body.open {
       transform: rotate(-45deg);
     }
   }
-
 

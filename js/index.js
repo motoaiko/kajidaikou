@@ -21,17 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		// A. ヘッダーの背景（10px以上で変化）
 		const isScrolled = scrollY > 10; // 10ピクセル以上スクロールしたか確認
 		if (header) header.classList.toggle('is-scrolled', isScrolled); // 10以上ならis-scrolledクラスをつける
-		if (headerLogo) headerLogo.classList.toggle('is-scrolled', isScrolled); // ロゴも一緒にis-scrolledクラスをつける
+		if (headerLogo) headerLogo.classList.toggle('is-scrolled', isScrolled); // ロゴもis-scrolledクラスをつける
 
 		// B. ボタンとバナーの表示・非表示
 		// ヘッダー高さを超えたら表示
 		if (scrollY > headerH) {
 			// ヘッダーの厚さより下にいったら
-			if (pageTopBtn) pageTopBtn.classList.add('show'); // 「上に戻るボタン」を出す
-			if (banner) banner.classList.add('show'); // 「バナー」を出す
+			if (pageTopBtn) pageTopBtn.classList.add('show'); // showクラスをつけ「上に戻るボタン」を出す
+			if (banner) banner.classList.add('show'); // 同じくバナーを出す
 		} else {
-			if (pageTopBtn) pageTopBtn.classList.remove('show'); // ボタンを隠す
-			if (banner) banner.classList.remove('show'); // バナーを隠す
+			if (pageTopBtn) pageTopBtn.classList.remove('show'); 
+			if (banner) banner.classList.remove('show'); 
 		}
 
 		// C. バナーの固定位置の切り替え
@@ -227,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		},
 		{
-			// 要素が0.2 = 20%見えたら実行する
-			threshold: 0.2,
+			// 要素が10%見えたら実行する
+			threshold: 0.1,
 			// 画面の下端から-50pxで反応させる
 			rootMargin: '0px 0px -50px 0px',
 		}

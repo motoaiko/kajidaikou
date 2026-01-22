@@ -123,9 +123,6 @@ a:hover {
 /* -----------------------------------------*/
 /* common */
 /* -----------------------------------------*/
-.common {
-  /* 英字サブタイトル */
-}
 .common__section {
   margin-bottom: 240px;
 }
@@ -827,6 +824,7 @@ a:hover {
   position: relative;
   font-family: "M PLUS Rounded 1c", sans-serif;
   background: rgba(255, 255, 255, 0.9);
+  background-image: url(https://www.transparenttextures.com/patterns/connected.png);
   padding: 60px 80px;
   border-radius: 50px;
   box-shadow: var(--shadow);
