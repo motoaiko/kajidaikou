@@ -1483,6 +1483,7 @@ body.open {
   &__title--em {
     &::after {
       width: 450px;
+      left: 5%;
 
       @include mobile{
         width: 270px;
