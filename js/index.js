@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (pageTopBtn) pageTopBtn.classList.add('show'); // showクラスをつけ「上に戻るボタン」を出す
 			if (banner) banner.classList.add('show'); // 同じくバナーを出す
 		} else {
-			if (pageTopBtn) pageTopBtn.classList.remove('show'); 
+			if (pageTopBtn) pageTopBtn.classList.remove('show'); // ボタンを隠す
 			if (banner) banner.classList.remove('show'); 
 		}
 
@@ -227,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		},
 		{
-			// 要素が10%見えたら実行する
-			threshold: 0.1,
+			// 要素が0.2 = 20%見えたら実行する
+			threshold: 0.2,
 			// 画面の下端から-50pxで反応させる
 			rootMargin: '0px 0px -50px 0px',
 		}
