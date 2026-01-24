@@ -1096,8 +1096,7 @@ a:hover {
 }
 .service-plan__title {
   font-size: 20px;
-  font-weight: 700;
-  color: #333;
+  position: relative;
 }
 @media (max-width: 800px) {
   .service-plan__title {
@@ -1109,7 +1108,6 @@ a:hover {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #333;
 }
 @media (max-width: 800px) {
   .service-plan__time {
@@ -1155,15 +1153,6 @@ a:hover {
   font-weight: 700;
 }
 
-.service-plan__price {
-  font-size: 20px;
-  font-weight: 700;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  justify-content: center;
-}
 .service-plan__price .service-plan__offprice {
   font-size: 22px;
   font-weight: 700;
