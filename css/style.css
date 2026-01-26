@@ -418,7 +418,7 @@ a:hover {
 }
 @media (max-width: 1024px) {
   .hamburger {
-    display: none;
+    display: block;
     position: absolute;
     width: 56px;
     height: 56px;

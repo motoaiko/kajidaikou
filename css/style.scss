@@ -376,7 +376,7 @@ a {
   display: none;
   
   @include tablet {
-    display: none;
+    display: block;
     position: absolute;
     width: 56px;
     height: 56px;
