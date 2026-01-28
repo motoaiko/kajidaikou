@@ -852,37 +852,43 @@ body.open {
   }
 
   &__sub {
-    margin-bottom: 1.2em;
-    display: block;
+    margin-bottom: 1.6rem;
+    font-weight: bold;
+    color: var(--color-text-main);
+    letter-spacing: 0.2rem;
   }
 
   &__offer {
     font-weight: bold;
   }
 
-    &__price {
-      color: #b22222; 
-      display: inline-block;
-      position: relative;
-      z-index: 1;
+  &__price {
+    color: #b22222; 
+    display: inline-block;
+    position: relative;
+    z-index: 1;
 
-      // マーカー風の下線
-      &::after {
-        content: ""; 
-        width: 230px;
-        height: 20px;
-        background-image: url(../img/line.webp);
-        position: absolute;
-        top: 90%;
-        left: 0px;
+    // マーカー風の下線
+    &::after {
+      content: ""; 
+      width: 230px;
+      height: 20px;
+      background-image: url(../img/line.webp);
+      position: absolute;
+      top: 90%;
+      left: 0px;
 
-        @include mobile{
-          width: 150px;
-        }
+      @include mobile{
+        width: 150px;
       }
     }
+  }
 
+  &__label {
+    font-size: 1.6rem;
+  }
 
+  
 }
 
 /* -----------------------------------------*/

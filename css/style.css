@@ -893,8 +893,10 @@ a:hover {
   }
 }
 .photo__sub {
-  margin-bottom: 1.2em;
-  display: block;
+  margin-bottom: 1.6rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+  letter-spacing: 0.2rem;
 }
 .photo__offer {
   font-weight: bold;
@@ -918,6 +920,9 @@ a:hover {
   .photo__price::after {
     width: 150px;
   }
+}
+.photo__label {
+  font-size: 1.6rem;
 }
 
 /* -----------------------------------------*/
