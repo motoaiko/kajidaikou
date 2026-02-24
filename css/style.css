@@ -701,7 +701,9 @@ a:hover {
     width: 240px;
   }
 }
-
+.problem {
+  /* 吹き出し共通 */
+}
 .problem__bubble {
   position: absolute;
   background: #fff;
@@ -723,7 +725,9 @@ a:hover {
   display: inline;
   background: linear-gradient(transparent 60%, rgba(247, 227, 106, 0.6) 60%);
 }
-
+.problem {
+  /* 位置調整（吹き出しの口） */
+}
 .problem__bubble::after {
   content: "";
   position: absolute;
@@ -834,7 +838,9 @@ a:hover {
     text-align: center;
   }
 }
-
+.photo__text {
+  /* 黄色い吹き出し画像 */
+}
 .photo__text::before {
   content: "";
   position: absolute;
@@ -938,7 +944,9 @@ a:hover {
 .solution__title-area {
   padding: 32px 24px;
 }
-
+.solution {
+  /* ｈ2 */
+}
 .solution__title--em::after {
   left: 0%;
   top: 95%;
@@ -949,7 +957,9 @@ a:hover {
     width: 220px;
   }
 }
-
+.solution {
+  /* リード文 */
+}
 .solution__lead {
   line-height: 1.8;
   margin-bottom: 80px;
@@ -960,7 +970,9 @@ a:hover {
     margin-bottom: 60px;
   }
 }
-
+.solution {
+  /* サービス内容について */
+}
 .solution__cards {
   display: flex;
   flex-wrap: wrap;
@@ -1136,7 +1148,9 @@ a:hover {
     font-size: 20px;
   }
 }
-
+.service-plan {
+  /* おすすめプラン */
+}
 .service-plan--recommend {
   border: 3px solid var(--color-accent);
   background: #f7ffe9;
@@ -1236,7 +1250,9 @@ a:hover {
     padding: 2.4rem;
   }
 }
-
+.voice {
+  /* 上段：画像＋テキスト */
+}
 .voice__content--top {
   display: flex;
   gap: 24px;
@@ -1249,7 +1265,9 @@ a:hover {
     gap: 16px;
   }
 }
-
+.voice {
+  /* 下段：プラン名など */
+}
 .voice__content--bottom {
   color: var(--color-accent);
   font-weight: 700;
@@ -1271,7 +1289,9 @@ a:hover {
     margin-top: 16px;
   }
 }
-
+.voice {
+  /* 左側：画像＋名前 */
+}
 .voice__img-area {
   width: 30%;
   text-align: center;
@@ -1294,7 +1314,9 @@ a:hover {
   color: var(--color-text-sub);
   line-height: 1.4;
 }
-
+.voice {
+  /* 右側：テキストエリア */
+}
 .voice__text-area {
   flex: 1;
   text-align: justify;
@@ -1322,7 +1344,11 @@ a:hover {
     font-size: 1.4rem;
   }
 }
-
+.voice {
+  /* ---------------------------- */
+  /* お客様の声をもっと見るctaボタン */
+  /* ---------------------------- */
+}
 .voice__cta {
   text-align: center;
   margin-top: 60px;
