@@ -1055,6 +1055,13 @@ a:hover {
     margin-bottom: 60px;
   }
 }
+.service-time__note {
+  margin-bottom: 40px;
+}
+.service-time__note-em {
+  font-weight: 700;
+  color: #5A8F2C;
+}
 .service-time__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

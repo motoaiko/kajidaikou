@@ -1027,6 +1027,15 @@ body.open {
     margin-bottom: 60px;
   }  
 
+
+  &__note {
+    margin-bottom: 440px;
+  }
+  &__note-em {
+    font-weight: 700;
+    color: #5A8F2C;
+  }
+
     &__cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
