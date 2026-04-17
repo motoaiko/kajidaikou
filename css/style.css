@@ -234,7 +234,8 @@ a:hover {
 }
 .header.is-scrolled {
   background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   height: 60px;
 }
 @media (max-width: 800px) {
@@ -581,6 +582,7 @@ a:hover {
   padding: 10% 6% 0 0;
   line-height: 1.6;
   position: relative;
+  position: relative;
 }
 @media (max-width: 800px) {
   .fv__title {
@@ -588,9 +590,6 @@ a:hover {
     margin-bottom: 24px;
     font-size: 2.4rem;
   }
-}
-.fv__title {
-  position: relative;
 }
 .fv__title::before {
   content: "";
@@ -672,6 +671,8 @@ a:hover {
   padding: 160px 0;
   text-align: center;
   position: relative;
+  /* 吹き出し共通 */
+  /* 位置調整（吹き出しの口） */
 }
 @media (max-width: 800px) {
   .problem {
@@ -701,9 +702,6 @@ a:hover {
     width: 240px;
   }
 }
-.problem {
-  /* 吹き出し共通 */
-}
 .problem__bubble {
   position: absolute;
   background: #fff;
@@ -725,9 +723,6 @@ a:hover {
   display: inline;
   background: linear-gradient(transparent 60%, rgba(247, 227, 106, 0.6) 60%);
 }
-.problem {
-  /* 位置調整（吹き出しの口） */
-}
 .problem__bubble::after {
   content: "";
   position: absolute;
@@ -736,7 +731,8 @@ a:hover {
   background: #fff;
   transform: rotate(45deg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
+          clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 .problem__bubble--top-left {
   top: -40px;
@@ -745,7 +741,8 @@ a:hover {
 .problem__bubble--top-left::after {
   bottom: 10px;
   right: 0px;
-  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+          clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-left::after {
@@ -759,7 +756,8 @@ a:hover {
 .problem__bubble--top-right::after {
   bottom: 5px;
   left: 24px;
-  clip-path: polygon(100% 0, 0 30%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 30%, 100% 100%);
+          clip-path: polygon(100% 0, 0 30%, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--top-right::after {
@@ -773,7 +771,8 @@ a:hover {
 .problem__bubble--bottom-left::after {
   top: 8px;
   right: 0px;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-left::after {
@@ -788,7 +787,8 @@ a:hover {
   top: -4px;
   left: 20px;
   transform: rotate(-45deg);
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 @media (max-width: 800px) {
   .problem__bubble--bottom-right::after {
@@ -829,6 +829,7 @@ a:hover {
   border-radius: 50px;
   box-shadow: var(--shadow);
   font-size: 2.4rem;
+  /* 黄色い吹き出し画像 */
 }
 @media (max-width: 800px) {
   .photo__text {
@@ -837,9 +838,6 @@ a:hover {
     padding: 40px;
     text-align: center;
   }
-}
-.photo__text {
-  /* 黄色い吹き出し画像 */
 }
 .photo__text::before {
   content: "";
@@ -867,14 +865,12 @@ a:hover {
   font-weight: bold;
   margin-bottom: 0.5em;
   color: #4a6741;
+  position: relative;
 }
 @media (max-width: 800px) {
   .photo__title {
     font-size: 1.1rem;
   }
-}
-.photo__title {
-  position: relative;
 }
 .photo__title::before {
   content: "";
@@ -935,6 +931,9 @@ a:hover {
 .solution {
   padding: 0 16px;
   margin-bottom: 240px;
+  /* ｈ2 */
+  /* リード文 */
+  /* サービス内容について */
 }
 @media (max-width: 800px) {
   .solution {
@@ -943,9 +942,6 @@ a:hover {
 }
 .solution__title-area {
   padding: 32px 24px;
-}
-.solution {
-  /* ｈ2 */
 }
 .solution__title--em::after {
   left: 0%;
@@ -957,9 +953,6 @@ a:hover {
     width: 220px;
   }
 }
-.solution {
-  /* リード文 */
-}
 .solution__lead {
   line-height: 1.8;
   margin-bottom: 80px;
@@ -969,9 +962,6 @@ a:hover {
     font-size: 1.6rem;
     margin-bottom: 60px;
   }
-}
-.solution {
-  /* サービス内容について */
 }
 .solution__cards {
   display: flex;
@@ -1040,6 +1030,7 @@ a:hover {
   margin-bottom: 64px;
   border-bottom: 2px solid var(--color-accent);
   font-family: "M PLUS Rounded 1c", sans-serif;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -1100,6 +1091,7 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: 0.3s ease;
+  /* おすすめプラン */
 }
 @media (max-width: 1024px) {
   .service-plan {
@@ -1147,9 +1139,6 @@ a:hover {
   .service-plan__price {
     font-size: 20px;
   }
-}
-.service-plan {
-  /* おすすめプラン */
 }
 .service-plan--recommend {
   border: 3px solid var(--color-accent);
@@ -1204,6 +1193,13 @@ a:hover {
   margin-bottom: 240px;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/voicebg.webp) no-repeat left 0px top 0px/cover;
   background-blend-mode: multiply;
+  /* 上段：画像＋テキスト */
+  /* 下段：プラン名など */
+  /* 左側：画像＋名前 */
+  /* 右側：テキストエリア */
+  /* ---------------------------- */
+  /* お客様の声をもっと見るctaボタン */
+  /* ---------------------------- */
 }
 @media (max-width: 800px) {
   .voice {
@@ -1250,9 +1246,6 @@ a:hover {
     padding: 2.4rem;
   }
 }
-.voice {
-  /* 上段：画像＋テキスト */
-}
 .voice__content--top {
   display: flex;
   gap: 24px;
@@ -1264,9 +1257,6 @@ a:hover {
     text-align: center;
     gap: 16px;
   }
-}
-.voice {
-  /* 下段：プラン名など */
 }
 .voice__content--bottom {
   color: var(--color-accent);
@@ -1289,9 +1279,6 @@ a:hover {
     margin-top: 16px;
   }
 }
-.voice {
-  /* 左側：画像＋名前 */
-}
 .voice__img-area {
   width: 30%;
   text-align: center;
@@ -1313,9 +1300,6 @@ a:hover {
   font-size: 1.4rem;
   color: var(--color-text-sub);
   line-height: 1.4;
-}
-.voice {
-  /* 右側：テキストエリア */
 }
 .voice__text-area {
   flex: 1;
@@ -1343,11 +1327,6 @@ a:hover {
   .voice__text p {
     font-size: 1.4rem;
   }
-}
-.voice {
-  /* ---------------------------- */
-  /* お客様の声をもっと見るctaボタン */
-  /* ---------------------------- */
 }
 .voice__cta {
   text-align: center;
@@ -1480,6 +1459,7 @@ a:hover {
   text-align: justify;
 }
 .faq__cta {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
@@ -1546,7 +1526,8 @@ a:hover {
   left: 0;
   width: 100%;
   z-index: 90;
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
   opacity: 0;
   transform: translateY(50px);
@@ -1718,4 +1699,5 @@ a:hover {
 .arrow::after {
   right: 0;
   transform: rotate(-45deg);
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
